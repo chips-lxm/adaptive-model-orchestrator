@@ -1,0 +1,7 @@
+interface:
+  display_name: "自适应多模型编排器"
+  short_description: "依据难度、依赖、并行性与验收风险规划和协调多模型协作流程"
+  default_prompt: "Use $adaptive-model-orchestrator to design the smallest effective model team and coordinate this task through integrated validation."
+
+policy:
+  allow_implicit_invocation: true
