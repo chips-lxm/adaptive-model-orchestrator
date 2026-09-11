@@ -1,29 +1,102 @@
 # Adaptive Model Orchestrator
 
-一个面向 Codex 的自适应多模型编排 Skill：根据任务难度、依赖、可并行性和验收风险，在 Astra、Sol、Terra、Luna 之间选择最小有效协作配置。
+[English](README.md) | [简体中文](README.zh-CN.md)
 
-它不会为了“多模型”而强行拆分任务。简单任务由当前会话直接完成；只有子任务能够独立推进并返回可验证产物时，才建立协作分支。
+![Adaptive Model Orchestrator social preview](assets/social-preview.png)
 
-## 核心能力
+Adaptive Model Orchestrator is a Codex skill that routes work across Astra, Sol, Terra, and Luna according to task complexity, parallelizability, dependencies, and verification risk.
 
-- 按难度、依赖和可拆分性决定单模型或多模型执行。
-- 为 Astra、Sol、Terra、Luna 分配方案、协调、实现和机械任务。
-- 规范分支交接、状态跟踪、升级返工与整体验收。
-- 强制 Luna 使用至少 `medium` 推理强度。
-- 遵守实际工具、模型可用性和环境并发限制。
+It is built around one rule: **use the smallest effective model team**.
 
-## 安装
+## The problem it solves
+
+```text
+Without routing
+every task → strongest model or unnecessary parallel agents
+
+With adaptive routing
+simple work          → current session
+complex planning     → Astra
+coordination         → Sol
+implementation       → Terra
+bounded routine work → Luna
+integrated review    → Sol, then Astra when the risk warrants it
+```
+
+Hard work is not automatically parallel work. The skill creates branches only when they can progress independently and return verifiable results.
+
+## How it routes work
+
+| Task shape | Execution strategy |
+|---|---|
+| One clear goal with a known path | Complete it in the current session |
+| Multiple tightly coupled steps | Keep one coordinator; delegate only independent research or checks |
+| Multiple independently verifiable deliverables | Use a small branch set with explicit ownership and dependencies |
+| One difficult, indivisible reasoning problem | Let Astra solve the core problem and optionally add an independent review |
+
+Default roles:
+
+- **Astra** — difficult reasoning, architecture, conflicting constraints, and high-risk final validation.
+- **Sol** — requirements, coordination, communication, integration, and cross-module review.
+- **Terra** — implementation, tool use, code, files, and complex layout work.
+- **Luna** — deterministic, bounded, and easy-to-check tasks. Luna is never assigned below `medium` reasoning.
+
+These are routing defaults, not a requirement to use every model. The active environment and user authorization always determine what can actually run.
+
+## Routing example
+
+User request:
+
+```text
+Build and review a full-stack authentication system.
+```
+
+Possible orchestration:
+
+1. **Astra · high** defines the architecture, threat model, interfaces, and acceptance criteria.
+2. **Sol · medium** turns those decisions into an owned dependency plan and coordinates integration.
+3. **Terra · medium/high** implements disjoint backend, frontend, and configuration work where parallel edits are safe.
+4. **Luna · medium** performs deterministic inventory, documentation, and checklist-based verification tasks.
+5. **Sol · high** checks integration and ordinary defects; **Astra · high** validates security-sensitive decisions and the final system.
+
+If the work cannot be separated safely, the skill keeps it in one branch instead of manufacturing parallelism.
+
+## Install
+
+Clone the repository into your local Codex skills directory:
 
 ```bash
 git clone https://github.com/chips-lxm/adaptive-model-orchestrator.git ~/.codex/skills/adaptive-model-orchestrator
 ```
 
-安装后开始新的 Codex 对话。Skill 可以自动匹配，也可以显式调用：
+Start a new Codex conversation after installation. The skill can be selected automatically from its description or invoked explicitly:
 
 ```text
-Use $adaptive-model-orchestrator to coordinate this task.
+Use $adaptive-model-orchestrator to coordinate this task with the smallest effective model team.
 ```
 
-## 许可证
+## What is included
+
+```text
+adaptive-model-orchestrator/
+├── SKILL.md
+├── agents/openai.yaml
+└── references/collaboration-and-validation.md
+```
+
+- `SKILL.md` contains routing decisions, model roles, constraints, and completion criteria.
+- `references/collaboration-and-validation.md` contains handoff fields, state tracking, escalation, and review rules.
+- `agents/openai.yaml` provides Codex-facing display metadata and a default prompt.
+
+## Design principles
+
+- Do not split work merely because it is difficult or has many steps.
+- Keep one coordinator responsible for requirements, dependencies, integration, and acceptance.
+- Give each file or module one active editor at a time.
+- Validate the integrated result, not just each branch in isolation.
+- Report the actual model and reasoning configuration; never claim a switch that did not happen.
+- Stop when the acceptance criteria are met.
+
+## License
 
 [MIT](LICENSE)
