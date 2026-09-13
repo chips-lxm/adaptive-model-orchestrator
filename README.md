@@ -8,6 +8,20 @@ Adaptive Model Orchestrator is a Codex skill that routes work across Astra, Sol,
 
 It is built around one rule: **use the smallest effective model team**.
 
+**Invest a little more judgment upfront. Aim for less rework later.**
+
+For complete projects, long autonomous tasks, and deliveries that should need less supervision, the skill first decides whether delegation is worthwhile. It then selects the smallest effective team and supplies context according to each task. The goal is fewer avoidable handoffs and repeated implementations, shorter delivery cycles, and more reliable results through integrated validation.
+
+Coordination can add upfront analysis, context transfer, and verification costs. Create branches only when the expected benefit outweighs that overhead. More agents do not necessarily use fewer tokens, and a cheaper model does not necessarily consume fewer tokens. Time, cost, and quality improvements are design goals, not measured guarantees; no quantitative comparison is currently published.
+
+## Updated: more deliberate collaboration decisions
+
+- **Recognize autonomous delivery requests**: complete projects, long autonomous work, and requests for less supervision should prompt a collaboration assessment. Loading the skill does not require spawning agents.
+- **Optimize total effort**: start with the fewest necessary branches and account for handoff, coordination, validation, and rework. Add branches only for independent work with a clear expected benefit.
+- **Match context to the task**: bounded execution can use focused context. Decisions about user intent, architecture, or the overall result need original requirements, important corrections, and decisions, with full relevant history when necessary.
+
+These decisions stay in the skill and load on demand. No new global `AGENTS.md` rule needs to run at every step. Automatic selection still depends on the host, description, and task context; invoke the skill explicitly when you want to ensure it is selected.
+
 ## The problem it solves
 
 ```text
