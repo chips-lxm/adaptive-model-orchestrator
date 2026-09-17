@@ -6,21 +6,25 @@
 
 Adaptive Model Orchestrator is a Codex skill that routes work across Astra, Sol, Terra, and Luna according to task complexity, parallelizability, dependencies, and verification risk.
 
-It is built around one rule: **use the smallest effective model team**.
+It is built around one rule: **use useful parallel work to improve overall delivery, while accounting for coordination cost**.
 
 **Invest a little more judgment upfront. Aim for less rework later.**
 
-For complete projects, long autonomous tasks, and deliveries that should need less supervision, the skill first decides whether delegation is worthwhile. It then selects the smallest effective team and supplies context according to each task. The goal is fewer avoidable handoffs and repeated implementations, shorter delivery cycles, and more reliable results through integrated validation.
+For complete projects, long autonomous tasks, and deliveries that should need less supervision, the skill first decides whether delegation is worthwhile. It then assigns work according to readiness, ownership, and expected benefit, and supplies context according to each task. The goal is fewer avoidable handoffs and repeated implementations, shorter delivery cycles, and more reliable results through integrated validation.
 
 Coordination can add upfront analysis, context transfer, and verification costs. Create branches only when the expected benefit outweighs that overhead. More agents do not necessarily use fewer tokens, and a cheaper model does not necessarily consume fewer tokens. Time, cost, and quality improvements are design goals, not measured guarantees; no quantitative comparison is currently published.
 
-## Updated: more deliberate collaboration decisions
+## Updated: useful parallel work and dependency-aware waiting
 
-- **Recognize autonomous delivery requests**: complete projects, long autonomous work, and requests for less supervision should prompt a collaboration assessment. Loading the skill does not require spawning agents.
-- **Optimize total effort**: start with the fewest necessary branches and account for handoff, coordination, validation, and rework. Add branches only for independent work with a clear expected benefit.
-- **Match context to the task**: bounded execution can use focused context. Decisions about user intent, architecture, or the overall result need original requirements, important corrections, and decisions, with full relevant history when necessary.
+- **Keep the lead agent productive**: after delegation, the lead continues independent work with clear ownership. It can wait when no useful, safe work is ready; it does not invent work to stay busy.
+- **Dispatch ready tasks together**: independent tasks with a clear expected benefit can start concurrently within the host's available capacity. One level of branches does not mean one subagent, and there is no fixed team size.
+- **Use results as dependencies become ready**: check each stable handoff at an appropriate stopping point and unlock its consumers without waiting for unrelated branches. A progress message or intermediate file alone is not a ready dependency.
+- **Avoid duplicate work and conflicting edits**: the lead follows the same single-editor boundaries as subagents. Taking over requires the original editor to stop and hand off its work. A broad module name does not make disjoint work conflict.
+- **Keep review proportional**: use targeted integration checks as results arrive and validate the final whole. Add an independent reviewer only when its expected value outweighs the handoff and coordination cost.
 
-These decisions stay in the skill and load on demand. No new global `AGENTS.md` rule needs to run at every step. Automatic selection still depends on the host, description, and task context; invoke the skill explicitly when you want to ensure it is selected.
+See the [2026-09-17 change notes](CHANGELOG.md#2026-09-17) for the detailed changes and validation scope.
+
+Complete projects, long autonomous work, and requests for less supervision prompt a collaboration assessment, not automatic delegation. Focused execution gets focused context; decisions about intent, architecture, or the overall result retain original requirements and relevant history. These decisions load with the skill. No additional global `AGENTS.md` rule is needed. Automatic selection still depends on the host, description, and task context; invoke the skill explicitly when you want to ensure it is selected.
 
 ## The problem it solves
 
@@ -43,9 +47,9 @@ Hard work is not automatically parallel work. The skill creates branches only wh
 
 | Task shape | Execution strategy |
 |---|---|
-| One clear goal with a known path | Complete it in the current session |
+| A clear path with no worthwhile independent subtask | Complete it in the current session |
 | Multiple tightly coupled steps | Keep one coordinator; delegate only independent research or checks |
-| Multiple independently verifiable deliverables | Use a small branch set with explicit ownership and dependencies |
+| Multiple independently verifiable deliverables | Dispatch ready, non-conflicting tasks concurrently when worthwhile; the lead advances its own work |
 | One difficult, indivisible reasoning problem | Let Astra solve the core problem and optionally add an independent review |
 
 Default roles:
@@ -55,7 +59,7 @@ Default roles:
 - **Terra** — implementation, tool use, code, files, and complex layout work.
 - **Luna** — deterministic, bounded, and easy-to-check tasks. Luna is never assigned below `medium` reasoning.
 
-These are routing defaults, not a requirement to use every model. The active environment and user authorization always determine what can actually run.
+These are routing defaults, not a requirement to use every model or create a separate agent for each role. The lead can combine execution and coordination. The active environment and user authorization always determine what can actually run.
 
 ## Routing example
 
@@ -67,13 +71,13 @@ Build and review a full-stack authentication system.
 
 Possible orchestration:
 
-1. **Astra · high** defines the architecture, threat model, interfaces, and acceptance criteria.
-2. **Sol · medium** turns those decisions into an owned dependency plan and coordinates integration.
-3. **Terra · medium/high** implements disjoint backend, frontend, and configuration work where parallel edits are safe.
-4. **Luna · medium** performs deterministic inventory, documentation, and checklist-based verification tasks.
-5. **Sol · high** checks integration and ordinary defects; **Astra · high** validates security-sensitive decisions and the final system.
+1. The lead establishes stable interfaces and acceptance criteria, drawing on **Astra · high** for difficult architecture or security decisions when needed.
+2. Once those inputs are ready, disjoint backend and frontend work can run concurrently with **Terra · medium/high**. The lead advances independent deployment configuration or integration preparation within its own editing scope.
+3. Bounded documentation or routine checks can go to **Luna · medium** when their inputs are ready and delegation is worthwhile; spare capacity alone is not a reason to create a branch.
+4. As stable results arrive, the lead checks each handoff and starts the work it unblocks. It waits when all remaining useful work is genuinely blocked, without duplicating an active implementation.
+5. The integrated system receives final validation. **Sol** and **Astra** remain the preferred routes for ordinary and difficult reviews; the lead may combine roles, and a separate reviewer is added only when the expected value justifies it.
 
-If the work cannot be separated safely, the skill keeps it in one branch instead of manufacturing parallelism.
+If the core problem is indivisible and a subagent is better placed to solve it, the lead may delegate that work and wait. The skill does not manufacture parallelism.
 
 ## Install
 
@@ -86,8 +90,16 @@ git clone https://github.com/chips-lxm/adaptive-model-orchestrator.git ~/.codex/
 Start a new Codex conversation after installation. The skill can be selected automatically from its description or invoked explicitly:
 
 ```text
-Use $adaptive-model-orchestrator to coordinate this task with the smallest effective model team.
+Use $adaptive-model-orchestrator to coordinate useful parallel work, wait when dependencies require it, and validate the integrated result.
 ```
+
+For an existing Git-based installation, preserve any local customizations, then update with:
+
+```bash
+git -C ~/.codex/skills/adaptive-model-orchestrator pull --ff-only
+```
+
+For a manually copied installation, back up customizations and replace `SKILL.md`, `agents/openai.yaml`, and `references/collaboration-and-validation.md` together from the same revision.
 
 ## What is included
 
@@ -105,10 +117,10 @@ adaptive-model-orchestrator/
 ## Design principles
 
 - Do not split work merely because it is difficult or has many steps.
-- Keep one coordinator responsible for requirements, dependencies, integration, and acceptance.
-- Give each file or module one active editor at a time.
+- Keep one lead responsible for requirements, dependencies, integration, and acceptance, while also advancing useful independent work.
+- Give each file or shared artifact one active editor at a time, including the lead; hand over ownership before taking over edits.
 - Validate the integrated result, not just each branch in isolation.
-- Report the actual model and reasoning configuration; never claim a switch that did not happen.
+- Report only confirmed model and reasoning settings; mark unavailable fields as unknown instead of treating requested settings as confirmed execution.
 - Stop when the acceptance criteria are met.
 
 ## License

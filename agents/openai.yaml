@@ -1,7 +1,7 @@
 interface:
   display_name: "自适应多模型编排器"
-  short_description: "为自主项目评估协作收益，按任务分工与传递背景，重视整体验收"
-  default_prompt: "Use $adaptive-model-orchestrator to design the smallest effective model team and coordinate this task through integrated validation."
+  short_description: "评估协作收益，协调主智能体与分支并行推进，按依赖等待并完成整体验收"
+  default_prompt: "Use $adaptive-model-orchestrator to coordinate useful parallel work across the lead and subagents, wait when dependencies require it, and validate the integrated result."
 
 policy:
   allow_implicit_invocation: true
