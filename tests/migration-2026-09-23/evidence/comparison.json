@@ -1,0 +1,16 @@
+{
+  "scope": "Read-only comparison of one old Sol/high run using backed-up skills and one new Sol/high run using candidate skills on the same 18 trigger, 12 workflow and 12 migration cases, plus the same pricing fixture. Not a statistical model benchmark; both model and skill text changed.",
+  "findings": [
+    "Both Sol versions found exact-int quantity validation and non-string delivery equality defects; both preserved valid arithmetic in sampled cases.",
+    "Both versions rejected W01 false positive, retained Astra mandatory review, no-write boundary, independent verification and two-round stop.",
+    "New active routes use gpt-6-sol medium for settled implementation and gpt-6-luna high for bounded work, as approved.",
+    "Both baseline and candidate first-pass W05 described the failed new test as a new failure; candidate additionally called it a new regression without before evidence. The narrow evidence-attribution clarification and independent W05/W07/W10/W11/W12 retest are preserved separately.",
+    "Old T04 proceeded from explicit named-skill intent; candidate distinguished that intent from actual host loading. No host loading was exercised."
+  ],
+  "limits": [
+    "One run per Sol version; no old-Luna/new-Luna matched benchmark.",
+    "No normalized latency, billing or token-saving estimate.",
+    "Decision scenarios do not execute their hypothetical failure branches.",
+    "The isolated fixture does not establish no regressions for all real-world projects."
+  ]
+}

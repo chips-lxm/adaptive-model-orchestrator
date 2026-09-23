@@ -1,0 +1,10 @@
+Actual isolated W01 check
+Runtime: Python 3.9.6
+Scope: only the artifact text supplied in W01; no project files imported or modified
+
+total(0)=0; expected=0; PASS=True
+total(1)=10; expected=10; PASS=True
+total(-1) raised ValueError(quantity); PASS
+total(True) raised ValueError(quantity); PASS
+
+Conclusion: R1-01 is a false positive. R2-01 agrees with all executed probes.

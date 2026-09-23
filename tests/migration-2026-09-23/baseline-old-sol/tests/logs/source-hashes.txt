@@ -1,0 +1,8 @@
+Read-only fixture source hashes after the test run
+
+a3bba47f2f277b8d0d0f6bb163320f96e0cf97d5619d196b9771a9b20d4fc8fc  fixture/requirements.md
+fb6a3808b896346f31dc835ca625066012f306b8ac4921b136f4042d0c00a9c5  fixture/pricing.py
+a3bba47f2f277b8d0d0f6bb163320f96e0cf97d5619d196b9771a9b20d4fc8fc  fixture-before/requirements.md
+fb6a3808b896346f31dc835ca625066012f306b8ac4921b136f4042d0c00a9c5  fixture-before/pricing.py
+
+The coordinator-provided before-repair snapshot matches the initially reviewed files byte for byte. The listed files were not targeted by any write operation. metadata.json was not read from either directory.

@@ -1,0 +1,13 @@
+--- <migration-dir>/fixture-before/pricing.py	2026-09-23 17:43:17
++++ <migration-dir>/fixture/pricing.py	2026-09-23 17:56:28
+@@ -1,6 +1,9 @@
+ def quote(quantity, delivery="standard"):
+-    if not isinstance(quantity, int) or quantity < 0:
++    if type(quantity) is not int or quantity < 0:
+         raise ValueError("quantity")
++    if not isinstance(delivery, str):
++        raise ValueError("delivery")
++    delivery = str.__str__(delivery)
+     if delivery not in ("standard", "express"):
+         raise ValueError("delivery")
+     return quantity * 125 + (500 if delivery == "express" else 0)

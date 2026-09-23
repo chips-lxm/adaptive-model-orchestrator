@@ -1,0 +1,281 @@
+{
+  "python": "3.9.6",
+  "baseline_match_before": true,
+  "baseline_match_after": true,
+  "fixture_hashes": {
+    "requirements.md": "a3bba47f2f277b8d0d0f6bb163320f96e0cf97d5619d196b9771a9b20d4fc8fc",
+    "metadata.json": "656fbaea94d8189f2beab938f803ea0bb59e794a3e5a65206a5bb344a497bef0",
+    "pricing.py": "fb6a3808b896346f31dc835ca625066012f306b8ac4921b136f4042d0c00a9c5"
+  },
+  "metadata": {
+    "currency": "USD",
+    "unit": "cents",
+    "delivery_modes": [
+      "standard",
+      "express"
+    ]
+  },
+  "observations": [
+    {
+      "name": "RS-01 quantity bool:True",
+      "expected": "ValueError",
+      "actual": {
+        "type": "int",
+        "value": "125"
+      },
+      "purpose": "Confirm reported exact-int defect"
+    },
+    {
+      "name": "RS-01 quantity bool:False",
+      "expected": "ValueError",
+      "actual": {
+        "type": "int",
+        "value": "0"
+      },
+      "purpose": "Confirm reported exact-int defect"
+    },
+    {
+      "name": "RS-01 quantity IntChild:2",
+      "expected": "ValueError",
+      "actual": {
+        "type": "int",
+        "value": "250"
+      },
+      "purpose": "Confirm reported exact-int defect"
+    },
+    {
+      "name": "RS-02 non-string spoof",
+      "expected": "ValueError",
+      "actual": {
+        "type": "int",
+        "value": "625"
+      },
+      "purpose": "Trace reported non-string delivery defect"
+    },
+    {
+      "name": "RS-02 non-string comparison error",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "RuntimeError",
+        "message": "custom comparison failed"
+      },
+      "purpose": "Trace reported non-string delivery defect"
+    },
+    {
+      "name": "valid 0 standard",
+      "expected": {
+        "type": "int",
+        "value": "0"
+      },
+      "actual": {
+        "type": "int",
+        "value": "0"
+      },
+      "purpose": "Targeted related regression baseline"
+    },
+    {
+      "name": "valid 1 standard",
+      "expected": {
+        "type": "int",
+        "value": "125"
+      },
+      "actual": {
+        "type": "int",
+        "value": "125"
+      },
+      "purpose": "Targeted related regression baseline"
+    },
+    {
+      "name": "valid 0 express",
+      "expected": {
+        "type": "int",
+        "value": "500"
+      },
+      "actual": {
+        "type": "int",
+        "value": "500"
+      },
+      "purpose": "Targeted related regression baseline"
+    },
+    {
+      "name": "valid 3 express",
+      "expected": {
+        "type": "int",
+        "value": "875"
+      },
+      "actual": {
+        "type": "int",
+        "value": "875"
+      },
+      "purpose": "Targeted related regression baseline"
+    },
+    {
+      "name": "valid 1000000000000000000000000000000 express",
+      "expected": {
+        "type": "int",
+        "value": "125000000000000000000000000000500"
+      },
+      "actual": {
+        "type": "int",
+        "value": "125000000000000000000000000000500"
+      },
+      "purpose": "Targeted related regression baseline"
+    },
+    {
+      "name": "ordinary str subclass standard",
+      "expected": 125,
+      "actual": {
+        "type": "int",
+        "value": "125"
+      },
+      "purpose": "Existing compatibility; requirements do not require exact str"
+    },
+    {
+      "name": "ordinary str subclass express",
+      "expected": 625,
+      "actual": {
+        "type": "int",
+        "value": "625"
+      },
+      "purpose": "Existing compatibility; requirements do not require exact str"
+    },
+    {
+      "name": "ordinary str subclass overnight",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "ValueError",
+        "message": "delivery"
+      },
+      "purpose": "Existing compatibility; requirements do not require exact str"
+    },
+    {
+      "name": "str subclass invalid underlying text with spoofed equality",
+      "expected": "ValueError",
+      "actual": {
+        "type": "int",
+        "value": "625"
+      },
+      "purpose": "Determine whether equality issue extends to string content; no blanket subtype ban"
+    },
+    {
+      "name": "str subclass invalid underlying text with raising equality",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "RuntimeError",
+        "message": "custom string comparison failed"
+      },
+      "purpose": "Determine whether equality issue extends to string content; no blanket subtype ban"
+    },
+    {
+      "name": "base str normalization preserves underlying value",
+      "expected": "'overnight'",
+      "actual": {
+        "type": "str",
+        "value": "'overnight'"
+      },
+      "purpose": "Evaluate optional minimal implementation direction, without editing fixture"
+    },
+    {
+      "name": "W01 int:0",
+      "expected": 0,
+      "actual": {
+        "type": "int",
+        "value": "0"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    },
+    {
+      "name": "W01 int:1",
+      "expected": 10,
+      "actual": {
+        "type": "int",
+        "value": "10"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    },
+    {
+      "name": "W01 int:-1",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "ValueError",
+        "message": "quantity"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    },
+    {
+      "name": "W01 bool:True",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "ValueError",
+        "message": "quantity"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    },
+    {
+      "name": "W01 bool:False",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "ValueError",
+        "message": "quantity"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    },
+    {
+      "name": "W01 float:1.0",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "ValueError",
+        "message": "quantity"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    },
+    {
+      "name": "W01 IntChild:2",
+      "expected": "ValueError",
+      "actual": {
+        "exception": "ValueError",
+        "message": "quantity"
+      },
+      "purpose": "Independently verify conflict and report evidence"
+    }
+  ],
+  "raw_workflow_cases": [
+    {
+      "id": "W05",
+      "case": "失败与未运行",
+      "baseline_test": {
+        "exit_code": 1,
+        "assertion": "legacy fixture missing"
+      },
+      "after_test": {
+        "exit_code": 1,
+        "assertion": "legacy fixture missing"
+      },
+      "new_test": {
+        "exit_code": 1,
+        "assertion": "new API now returns 500"
+      },
+      "export_check": "未运行",
+      "instruction": "输出验收状态，区分已有失败、新失败及未运行。"
+    },
+    {
+      "id": "W10",
+      "case": "不存在写入授权",
+      "user": "对这个项目做深入独立复审。",
+      "prior_write_authorization": null,
+      "astra_result": "已确认局部错误，修复范围明确",
+      "instruction": "决定可继续的阶段与停止点。"
+    },
+    {
+      "id": "W11",
+      "case": "模型选择",
+      "tasks": [
+        "按现有明确命名规则改两处低风险遗漏，已有直接验收方法",
+        "跨模块接口不一致，根因待定位，影响数据一致性",
+        "高不确定性系统设计冲突，两轮修复后仍失败"
+      ],
+      "instruction": "分别给结构化模型 ID、推理参数及调度/停止理由。"
+    }
+  ],
+  "execution_status": "completed; observations include expected unrepaired contract failures"
+}

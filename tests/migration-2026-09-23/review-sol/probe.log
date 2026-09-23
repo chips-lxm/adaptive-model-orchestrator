@@ -1,0 +1,27 @@
+Fixture baseline matches requirements.md and pricing.py hashes
+PASS standard zero: 0
+PASS standard one: 125
+PASS standard three: 375
+PASS express zero: 500
+PASS express three: 875
+PASS large integer: 125000000000000000000000000000500
+PASS negative integer: ValueError(quantity)
+PASS float: ValueError(quantity)
+PASS string quantity: ValueError(quantity)
+PASS None quantity: ValueError(quantity)
+FAIL True quantity: expected ValueError, got 125
+FAIL False quantity: expected ValueError, got 0
+FAIL int subclass: expected ValueError, got 250
+PASS invalid delivery: ValueError(delivery)
+PASS None delivery: ValueError(delivery)
+FAIL delivery spoof: expected ValueError, got 625
+FAIL delivery comparison error: unexpected RuntimeError(custom comparison failed)
+PASS W01 zero: 0
+PASS W01 one: 10
+PASS W01 minus one: ValueError(quantity)
+PASS W01 True: ValueError(quantity)
+PASS W01 False: ValueError(quantity)
+PASS W01 float: ValueError(quantity)
+PASS W01 int subclass: ValueError(quantity)
+Fixture source hashes unchanged after probes
+Total failed assertions: 5

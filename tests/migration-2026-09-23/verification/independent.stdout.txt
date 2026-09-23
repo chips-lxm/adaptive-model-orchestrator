@@ -1,0 +1,242 @@
+{
+  "passed": 59,
+  "total": 59,
+  "results": [
+    {
+      "name": "plain 0 standard",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 0 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 0 express",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 0 express",
+      "status": "passed"
+    },
+    {
+      "name": "default 0",
+      "status": "passed"
+    },
+    {
+      "name": "plain 1 standard",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 1 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 1 express",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 1 express",
+      "status": "passed"
+    },
+    {
+      "name": "default 1",
+      "status": "passed"
+    },
+    {
+      "name": "plain 3 standard",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 3 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 3 express",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 3 express",
+      "status": "passed"
+    },
+    {
+      "name": "default 3",
+      "status": "passed"
+    },
+    {
+      "name": "plain 1000000000000000000000000000000 standard",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 1000000000000000000000000000000 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 1000000000000000000000000000000 express",
+      "status": "passed"
+    },
+    {
+      "name": "ordinary subclass 1000000000000000000000000000000 express",
+      "status": "passed"
+    },
+    {
+      "name": "default 1000000000000000000000000000000",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity int -1",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity int -1000000000000000000000000000000",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity bool True",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity bool False",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity float 1.0",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity str '1'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity NoneType None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity list []",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity dict {}",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity object <object object at 0x102610790>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity IntChild 0",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity IntChild 2",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 str 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 str ''",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 NoneType None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 int 7",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 bytes b'express'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 list []",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 dict {}",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 SpoofObject <__main__.SpoofObject object at 0x1074b6730>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 RaisingObject <__main__.RaisingObject object at 0x1074b6760>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 OrdinaryText 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 SpoofText 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=0 RaisingText 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 str 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 str ''",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 NoneType None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 int 7",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 bytes b'express'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 list []",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 dict {}",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 SpoofObject <__main__.SpoofObject object at 0x1074b6790>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 RaisingObject <__main__.RaisingObject object at 0x1074b6730>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 OrdinaryText 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 SpoofText 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery q=1 RaisingText 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "metadata currency",
+      "status": "passed"
+    },
+    {
+      "name": "metadata unit",
+      "status": "passed"
+    },
+    {
+      "name": "metadata delivery_modes",
+      "status": "passed"
+    }
+  ]
+}

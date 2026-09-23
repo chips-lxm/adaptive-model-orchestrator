@@ -1,0 +1,90 @@
+{
+  "passed": 16,
+  "total": 20,
+  "results": [
+    {
+      "name": "valid 0 standard",
+      "status": "passed"
+    },
+    {
+      "name": "valid 1 standard",
+      "status": "passed"
+    },
+    {
+      "name": "valid 100 standard",
+      "status": "passed"
+    },
+    {
+      "name": "valid 0 express",
+      "status": "passed"
+    },
+    {
+      "name": "valid 3 express",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity -1 (int)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity True (bool)",
+      "status": "failed",
+      "detail": "expected ValueError"
+    },
+    {
+      "name": "invalid quantity False (bool)",
+      "status": "failed",
+      "detail": "expected ValueError"
+    },
+    {
+      "name": "invalid quantity 1.0 (float)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity '1' (str)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity None (NoneType)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity [] (list)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity 1 (IntSubclass)",
+      "status": "failed",
+      "detail": "expected ValueError"
+    },
+    {
+      "name": "invalid delivery 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery ''",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery 7",
+      "status": "passed"
+    },
+    {
+      "name": "metadata currency",
+      "status": "failed",
+      "detail": "expected currency='AUD', got 'USD'"
+    },
+    {
+      "name": "metadata unit",
+      "status": "passed"
+    },
+    {
+      "name": "metadata delivery_modes",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+Actual read-only fixture check
+Runtime: Python 3.9.6
+Source: fixture/pricing.py loaded with bytecode generation disabled
+
+valid_zero_standard: got=0, expected=0, type=int, PASS=True
+valid_zero_express: got=500, expected=500, type=int, PASS=True
+valid_one_standard: got=125, expected=125, type=int, PASS=True
+valid_two_express: got=750, expected=750, type=int, PASS=True
+valid_large: got=125000000000000000000000000000000, expected=125000000000000000000000000000000, type=int, PASS=True
+negative_int: ValueError(quantity), PASS
+bool_true: ACCEPTED got=125, VIOLATION
+bool_false: ACCEPTED got=0, VIOLATION
+float: ValueError(quantity), PASS
+string_quantity: ValueError(quantity), PASS
+none_quantity: ValueError(quantity), PASS
+int_subclass: ACCEPTED got=250, VIOLATION
+invalid_string: ValueError(delivery), PASS
+none_delivery: ValueError(delivery), PASS
+int_delivery: ValueError(delivery), PASS
+bool_delivery: ValueError(delivery), PASS
+equality_spoof: ACCEPTED got=125, VIOLATION
+
+Unchanged before-repair snapshot confirmation
+Source: fixture-before/pricing.py loaded with bytecode generation disabled
+
+snapshot quote(0)= 0
+snapshot quote(0, express)= 500
+snapshot True: ACCEPTED 125
+snapshot False: ACCEPTED 0
+snapshot IntChild(2): ACCEPTED 250
+snapshot equality_spoof: ACCEPTED 125

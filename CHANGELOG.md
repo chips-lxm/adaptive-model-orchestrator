@@ -1,5 +1,13 @@
 # Change notes / 更新说明
 
+## 2026-09-23
+
+### 模型路由更新 / Model routing update
+
+当前会话先理解需求，并保持用户选定的主模型。`gpt-6-astra` 保留困难推理与高风险验收职责；`gpt-6-sol` 同时承接此前 Sol 与 Terra 的协调、分析和实现工作，通常使用 `medium` / `high`，必要时使用 `xhigh`；`gpt-6-luna` 只承接边界明确、低风险且可核对的工作，始终使用 `high`。模型路由合并不取消需要独立完成的审查与修复职责。原有依赖、单一修改负责人、按收益委派和整体验收规则继续适用。迁移检查的范围与限制见 [验证报告](tests/migration-2026-09-23/VALIDATION.md)；不承诺普遍的质量、耗时或 Token 用量收益。
+
+The current session first understands the request and remains on the user's selected model. `gpt-6-astra` retains difficult reasoning and high-risk validation. `gpt-6-sol` takes both former Sol and Terra work across coordination, analysis, and implementation at `medium` / `high`, with `xhigh` when needed. `gpt-6-luna` takes only bounded, low-risk, verifiable work and always runs at `high`. Consolidating model routes does not remove required independence between review and repair. Existing dependency, single-editor, benefit-based delegation, and integrated validation rules still apply. See the [migration validation report](tests/migration-2026-09-23/VALIDATION.md) for the scope and limits of its checks; no universal quality, latency, or token savings are claimed.
+
 ## 2026-09-17
 
 ### 并行推进与按依赖等待

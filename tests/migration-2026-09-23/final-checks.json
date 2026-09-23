@@ -1,0 +1,32 @@
+{
+  "adaptive-model-orchestrator": {
+    "format": "passed",
+    "configuration": "passed",
+    "relative_links": "passed",
+    "public_path_and_id_check": "passed",
+    "whitespace": "passed",
+    "active_routes": "passed",
+    "reviewed_operational_hashes": {
+      "SKILL.md": "c3e9903c3a1f1e73417895576826ed5c461bf08770f308d1a112b502615305a0",
+      "references/collaboration-and-validation.md": "0236dbeacf69884034f92e7b20cac8b5653c5f22057cd0225ef97ebcb12d9140"
+    }
+  },
+  "deep-project-review": {
+    "format": "passed",
+    "configuration": "passed",
+    "relative_links": "passed",
+    "public_path_and_id_check": "passed",
+    "whitespace": "passed",
+    "active_routes": "passed",
+    "reviewed_operational_hashes": {
+      "SKILL.md": "8bde5aba04e46b6d99040f13e31cddc383c2285091d20be26d574e243e7a5518",
+      "references/templates.md": "8d1ed659712e45d7e4fe04e868d0f769e59969b3dffc262ba1b6f69c7eeaa0f0",
+      "references/runtime.md": "a9a6416b01f3d82b9cee12682e1be92d717eb3251379c3c3d66fd5e314f2155d"
+    }
+  },
+  "portable_evidence_reproduction": {
+    "exit_code": 0,
+    "contract_checks": 22,
+    "independent_checks": 59
+  }
+}

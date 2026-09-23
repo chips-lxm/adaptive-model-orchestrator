@@ -1,0 +1,8 @@
+{
+  "currency": "USD",
+  "unit": "cents",
+  "delivery_modes": [
+    "standard",
+    "express"
+  ]
+}

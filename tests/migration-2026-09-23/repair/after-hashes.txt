@@ -1,0 +1,5 @@
+a3bba47f2f277b8d0d0f6bb163320f96e0cf97d5619d196b9771a9b20d4fc8fc  skill-migration-2026-09-23/fixture/requirements.md
+a4f3f019e8d21f121200d57313e6d5716f892bc15c7ab6cef6a27084992bfd1b  skill-migration-2026-09-23/fixture/pricing.py
+4f8465268bfd0902e0845c7470aaa55f76589a3a99c22410ca7ba3e3e5867cce  skill-migration-2026-09-23/fixture/metadata.json
+a4f3f019e8d21f121200d57313e6d5716f892bc15c7ab6cef6a27084992bfd1b  skill-migration-2026-09-23/repair/test-copy/pricing.py
+4f8465268bfd0902e0845c7470aaa55f76589a3a99c22410ca7ba3e3e5867cce  skill-migration-2026-09-23/repair/test-copy/metadata.json

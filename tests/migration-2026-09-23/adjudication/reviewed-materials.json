@@ -1,0 +1,93 @@
+{
+  "note": "Complete reads. Hashes captured at report completion, after the root W05 clarification was reread. Initial first-pass decision evidence remains unchanged.",
+  "files": [
+    {
+      "path": "<migration-dir>/fixture/requirements.md",
+      "sha256": "a3bba47f2f277b8d0d0f6bb163320f96e0cf97d5619d196b9771a9b20d4fc8fc"
+    },
+    {
+      "path": "<migration-dir>/fixture/pricing.py",
+      "sha256": "fb6a3808b896346f31dc835ca625066012f306b8ac4921b136f4042d0c00a9c5"
+    },
+    {
+      "path": "<migration-dir>/fixture/metadata.json",
+      "sha256": "656fbaea94d8189f2beab938f803ea0bb59e794a3e5a65206a5bb344a497bef0"
+    },
+    {
+      "path": "<migration-dir>/evidence/baseline.json",
+      "sha256": "7b091941e75ff99df7047127d842770fa90f4b9356f25fc97c61150bf743856d"
+    },
+    {
+      "path": "<migration-dir>/verify_fixture.py",
+      "sha256": "e252e23e2b32a2f230b0162a305ef0ec73cbcbf59d51bea19b2859a1e8b3e84f"
+    },
+    {
+      "path": "<migration-dir>/evidence/before-tests.json",
+      "sha256": "01fa0e66968acb2dc4324d0bd3cbe35e9198b8b0e6085322a24165cad8e7ed04"
+    },
+    {
+      "path": "<migration-dir>/review-sol/fixture-review.md",
+      "sha256": "b913a86965398120174be1d4405629ce810dbf8cebddb48622528707cded6052"
+    },
+    {
+      "path": "<migration-dir>/review-sol/check_behavior.py",
+      "sha256": "d8fd57ef7be0edc142dfb3d2c5d3980e348b3560235a72b36d000c36d3dcd048"
+    },
+    {
+      "path": "<migration-dir>/review-sol/probe.log",
+      "sha256": "dbe60fad64c870405cd257f8bcb953800b1adea65babfa40363ac027d726df45"
+    },
+    {
+      "path": "<migration-dir>/review-luna/fixture-review.md",
+      "sha256": "a184ae3becea706e20394a02eb7ef1aefb4ccb590a9405cd94da904c1b1814aa"
+    },
+    {
+      "path": "<migration-dir>/review-sol/behavior-decisions.md",
+      "sha256": "86cdf7ecf973ecb35ceae4fb456aadc6780fc02e7f38bfee81be7e4ef3a9c9c5"
+    },
+    {
+      "path": "<migration-dir>/review-luna/migration-decisions.md",
+      "sha256": "d6766e7a21d240ddc3c726dd7b8fa4da6fd5e3c12ff046f6e56fc724c62ca7cb"
+    },
+    {
+      "path": "<migration-dir>/migration-cases.json",
+      "sha256": "560573bccc392547de912be7b24d8a52ca5a746003d9b649ef64d1a71f249df0"
+    },
+    {
+      "path": "<repository-parent>/adaptive-model-orchestrator/SKILL.md",
+      "sha256": "c3e9903c3a1f1e73417895576826ed5c461bf08770f308d1a112b502615305a0"
+    },
+    {
+      "path": "<repository-parent>/adaptive-model-orchestrator/references/collaboration-and-validation.md",
+      "sha256": "0236dbeacf69884034f92e7b20cac8b5653c5f22057cd0225ef97ebcb12d9140"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/SKILL.md",
+      "sha256": "8bde5aba04e46b6d99040f13e31cddc383c2285091d20be26d574e243e7a5518"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/references/runtime.md",
+      "sha256": "a9a6416b01f3d82b9cee12682e1be92d717eb3251379c3c3d66fd5e314f2155d"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/references/templates.md",
+      "sha256": "8d1ed659712e45d7e4fe04e868d0f769e59969b3dffc262ba1b6f69c7eeaa0f0"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/README.md",
+      "sha256": "ce50b1ece1998d518fa4c418230a6df6ead5813a6b3ddcc63cdf5662a60a0179"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/examples/AGENTS-entry.md",
+      "sha256": "e665539c0482bd2b14c6e511fe9082b46bb057b741cb3e7c7677e2aaa24e789b"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/agents/openai.yaml",
+      "sha256": "c301c3eb016ad657f5b6fd3c30c664b4941fa14e3ee8c532b25d43738cb2f269"
+    },
+    {
+      "path": "<repository-parent>/deep-project-review/tests/cases.json",
+      "sha256": "d57a4360fd14f7bbfb7860343003d9032b79c7aa4c089b34257b08bd8120dc30"
+    }
+  ]
+}

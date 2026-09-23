@@ -1,0 +1,94 @@
+{
+  "passed": 22,
+  "total": 22,
+  "results": [
+    {
+      "name": "valid 0 standard",
+      "status": "passed"
+    },
+    {
+      "name": "valid 1 standard",
+      "status": "passed"
+    },
+    {
+      "name": "valid 100 standard",
+      "status": "passed"
+    },
+    {
+      "name": "valid 0 express",
+      "status": "passed"
+    },
+    {
+      "name": "valid 3 express",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity -1 (int)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity True (bool)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity False (bool)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity 1.0 (float)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity '1' (str)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity None (NoneType)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity [] (list)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid quantity 1 (IntSubclass)",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery 'overnight'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery ''",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery 7",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery <__main__.DeliverySpoof object at 0x109786c70>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid delivery <__main__.DeliveryRaiser object at 0x10980cee0>",
+      "status": "passed"
+    },
+    {
+      "name": "metadata currency",
+      "status": "passed"
+    },
+    {
+      "name": "metadata unit",
+      "status": "passed"
+    },
+    {
+      "name": "metadata delivery_modes",
+      "status": "passed"
+    }
+  ]
+}

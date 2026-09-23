@@ -1,0 +1,70 @@
+{
+  "python": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "executions": [
+    {
+      "name": "root_contract",
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+        "-B",
+        "<migration-dir>/verify_fixture.py",
+        "<migration-dir>/verification/test-copy"
+      ],
+      "cwd": "<migration-dir>/verification",
+      "exit_code": 0,
+      "stdout": "root_contract.stdout.txt",
+      "stderr": "root_contract.stderr.txt"
+    },
+    {
+      "name": "independent",
+      "command": [
+        "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+        "-B",
+        "<migration-dir>/verification/independent_checks.py",
+        "<migration-dir>/verification/test-copy"
+      ],
+      "cwd": "<migration-dir>/verification",
+      "exit_code": 0,
+      "stdout": "independent.stdout.txt",
+      "stderr": "independent.stderr.txt"
+    },
+    {
+      "name": "pricing_diff",
+      "command": [
+        "diff",
+        "-u",
+        "<migration-dir>/fixture-before/pricing.py",
+        "<migration-dir>/fixture/pricing.py"
+      ],
+      "cwd": "<migration-dir>/verification",
+      "exit_code": 1,
+      "stdout": "pricing_diff.stdout.txt",
+      "stderr": "pricing_diff.stderr.txt"
+    },
+    {
+      "name": "metadata_diff",
+      "command": [
+        "diff",
+        "-u",
+        "<migration-dir>/fixture-before/metadata.json",
+        "<migration-dir>/fixture/metadata.json"
+      ],
+      "cwd": "<migration-dir>/verification",
+      "exit_code": 1,
+      "stdout": "metadata_diff.stdout.txt",
+      "stderr": "metadata_diff.stderr.txt"
+    },
+    {
+      "name": "requirements_diff",
+      "command": [
+        "diff",
+        "-u",
+        "<migration-dir>/fixture-before/requirements.md",
+        "<migration-dir>/fixture/requirements.md"
+      ],
+      "cwd": "<migration-dir>/verification",
+      "exit_code": 0,
+      "stdout": "requirements_diff.stdout.txt",
+      "stderr": "requirements_diff.stderr.txt"
+    }
+  ]
+}

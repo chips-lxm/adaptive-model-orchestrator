@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "chips-lxm/adaptive-model-orchestrator",
+    "base_commit": "ba132f0ac250d2d9c08fe3c7ae5ac83721c8702d"
+  },
+  {
+    "repository": "chips-lxm/deep-project-review",
+    "base_commit": "785d85f0f84be9f833d4de4017d145afe5bd96a2"
+  }
+]

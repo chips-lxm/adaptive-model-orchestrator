@@ -1,0 +1,150 @@
+{
+  "passed": 36,
+  "total": 36,
+  "results": [
+    {
+      "name": "plain 0 standard",
+      "status": "passed"
+    },
+    {
+      "name": "subclass 0 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 0 express",
+      "status": "passed"
+    },
+    {
+      "name": "subclass 0 express",
+      "status": "passed"
+    },
+    {
+      "name": "plain 1 standard",
+      "status": "passed"
+    },
+    {
+      "name": "subclass 1 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 1 express",
+      "status": "passed"
+    },
+    {
+      "name": "subclass 1 express",
+      "status": "passed"
+    },
+    {
+      "name": "plain 3 standard",
+      "status": "passed"
+    },
+    {
+      "name": "subclass 3 standard",
+      "status": "passed"
+    },
+    {
+      "name": "plain 3 express",
+      "status": "passed"
+    },
+    {
+      "name": "subclass 3 express",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 str overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 str ",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 NoneType None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 int 7",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 bytes b'express'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 list []",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 dict {}",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 SpoofObject <__main__.SpoofObject object at 0x10350e2b0>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 RaiserObject <__main__.RaiserObject object at 0x10350e310>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 OrdinaryString overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 SpoofString overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 0 RaiserString overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 str overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 str ",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 NoneType None",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 int 7",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 bytes b'express'",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 list []",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 dict {}",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 SpoofObject <__main__.SpoofObject object at 0x10350e370>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 RaiserObject <__main__.RaiserObject object at 0x10350e2b0>",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 OrdinaryString overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 SpoofString overnight",
+      "status": "passed"
+    },
+    {
+      "name": "invalid 1 RaiserString overnight",
+      "status": "passed"
+    }
+  ]
+}

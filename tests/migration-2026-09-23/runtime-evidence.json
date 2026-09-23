@@ -1,0 +1,166 @@
+[
+  {
+    "task": "update_introductions",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "medium"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-sol",
+      "host_thread_effort": "medium",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-sol",
+          "effort": "medium"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "review_sol",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-sol",
+      "host_thread_effort": "high",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-sol",
+          "effort": "high"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "review_luna",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-luna",
+      "host_thread_effort": "high",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-luna",
+          "effort": "high"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "baseline_old_sol",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "high"
+    },
+    "effective": {
+      "host_thread_model": "gpt-5.6-sol",
+      "host_thread_effort": "high",
+      "turn_contexts": [
+        {
+          "model": "gpt-5.6-sol",
+          "effort": "high"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "astra_adjudication",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-astra",
+      "host_thread_effort": "xhigh",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-astra",
+          "effort": "xhigh"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "retest_acceptance",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-sol",
+      "host_thread_effort": "high",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-sol",
+          "effort": "high"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "fixture_repair",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "medium"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-sol",
+      "host_thread_effort": "medium",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-sol",
+          "effort": "medium"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  },
+  {
+    "task": "independent_acceptance",
+    "requested": {
+      "tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high"
+    },
+    "effective": {
+      "host_thread_model": "gpt-6-sol",
+      "host_thread_effort": "high",
+      "turn_contexts": [
+        {
+          "model": "gpt-6-sol",
+          "effort": "high"
+        },
+        {
+          "model": "gpt-6-sol",
+          "effort": "high"
+        }
+      ]
+    },
+    "evidence": "Read-only targeted host thread record plus its rollout turn_context; no model self-identification used."
+  }
+]
