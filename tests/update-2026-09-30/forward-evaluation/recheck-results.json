@@ -1,0 +1,282 @@
+[
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "missing release",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/missing-release"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 2] No such file or directory: '/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/runtime-manifest.json'"
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "intentional fixture seal once",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--seal"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"release_manifest\": \"/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/runtime-manifest.json\", \"digest\": \"06786e0c91d669397000a6b11602f4d4e6d59bae67b3e53ec5d752c104eea4b4\"}",
+    "stderr": ""
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "plugin discovery destination",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/.codex/plugins/cache/plugin/skills/snapshot"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Use a non-discoverable output directory outside the source skill"
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "custom CODEX_HOME plugin destination",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/custom-root/plugins/cache/plugin/skills/snapshot"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Use a non-discoverable output directory outside the source skill"
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "stable partial source update",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/partial"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Runtime content differs from its manifest"
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "completed sealed freeze",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/sealed-snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/sealed-snapshot/SKILL.md\", \"digest\": \"06786e0c91d669397000a6b11602f4d4e6d59bae67b3e53ec5d752c104eea4b4\", \"files\": 3, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "old snapshot after source change",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/sealed-snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/sealed-snapshot/SKILL.md\", \"digest\": \"06786e0c91d669397000a6b11602f4d4e6d59bae67b3e53ec5d752c104eea4b4\", \"files\": 3, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "preserve existing empty output",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/existing-empty"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/existing-empty'"
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "preserve existing nonempty output",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/existing-nonempty"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/existing-nonempty'"
+  },
+  {
+    "skill": "adaptive-model-orchestrator",
+    "case": "source test suite",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/Users/lxm/app1/github-preview/adaptive-model-orchestrator/tests/test_freeze_run.py"
+    ],
+    "TMPDIR": "/private/tmp/skill-forward-20260930/recheck-fixtures/adaptive-model-orchestrator/unit-tmp",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.018s\n\nOK"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "missing release",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/missing-release"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 2] No such file or directory: '/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/runtime-manifest.json'"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "intentional fixture seal once",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--seal"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"release_manifest\": \"/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/runtime-manifest.json\", \"digest\": \"06786e0c91d669397000a6b11602f4d4e6d59bae67b3e53ec5d752c104eea4b4\"}",
+    "stderr": ""
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "plugin discovery destination",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/.codex/plugins/cache/plugin/skills/snapshot"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Use a non-discoverable output directory outside the source skill"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "custom CODEX_HOME plugin destination",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/custom-root/plugins/cache/plugin/skills/snapshot"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Use a non-discoverable output directory outside the source skill"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "stable partial source update",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/partial"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Runtime content differs from its manifest"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "completed sealed freeze",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/sealed-snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/sealed-snapshot/SKILL.md\", \"digest\": \"06786e0c91d669397000a6b11602f4d4e6d59bae67b3e53ec5d752c104eea4b4\", \"files\": 3, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "old snapshot after source change",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/sealed-snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/sealed-snapshot/SKILL.md\", \"digest\": \"06786e0c91d669397000a6b11602f4d4e6d59bae67b3e53ec5d752c104eea4b4\", \"files\": 3, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "preserve existing empty output",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/existing-empty"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/existing-empty'"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "preserve existing nonempty output",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/existing-nonempty"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/existing-nonempty'"
+  },
+  {
+    "skill": "deep-project-review",
+    "case": "source test suite",
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/Users/lxm/app1/github-preview/deep-project-review/tests/test_freeze_run.py"
+    ],
+    "TMPDIR": "/private/tmp/skill-forward-20260930/recheck-fixtures/deep-project-review/unit-tmp",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.018s\n\nOK"
+  },
+  {
+    "case": "first report unchanged",
+    "sha256": "2e02e34d64c80e446ce3f2bf82eb3d441533efb7f938d2e5590583d7a223ff19"
+  }
+]

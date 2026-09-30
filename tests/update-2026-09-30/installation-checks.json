@@ -1,0 +1,167 @@
+{
+  "date": "2026-09-30",
+  "source": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator",
+  "installed": "/Users/lxm/.codex/skills/adaptive-model-orchestrator",
+  "baseline_commit": "b589d9f0c783add0403be5fe0424b60f993cc23e",
+  "recovery_tag": "before-6-1-sol-2026-09-30",
+  "updated_files": [
+    {
+      "path": "runtime-manifest.json",
+      "before": null,
+      "after": "c40cff33d5a451c646985ef99b404bb86e8026f9dbb27fc5a9e60c75e4c1e97f"
+    },
+    {
+      "path": ".gitignore",
+      "before": null,
+      "after": "458f2333853339a583f50da2ebdd467b1ff8f8067ee94c212b0dbb0afdbb83c8"
+    },
+    {
+      "path": "AGENTS.md",
+      "before": null,
+      "after": "41512bafedd78f22b61d63367e265e14f6e2ca9b4195920b9a6d5b112a9d0a02"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "before": "f3cba375b072eaa08a44af4dde07ca20bf13f334307e827a6da57860078f3d0e",
+      "after": "3e62137d0463a743930ca2ccafba1955a5e54eae1117878112cf101b690a02f4"
+    },
+    {
+      "path": "HANDOFF.md",
+      "before": null,
+      "after": "0dff13435cba33ef54131075299d78dd1d2c7061866ffa12921db88a2981ecfa"
+    },
+    {
+      "path": "README.md",
+      "before": "1b26e9c7e1f75b526906983c447110216d774b1d30fa3ef8c27271b936d82140",
+      "after": "97084b47415f22ce3d3e333c54feb2022d243f8f3b078b72ad3e4000146de5aa"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "before": "6b70c0923a7c0d1030f765c44428060c6918c8a8dc7b5ab12f4b522e40386765",
+      "after": "01f0b055386bae9eee11ce5c935dfbe253e2138913d2e924031226adee32ece7"
+    },
+    {
+      "path": "REQUIREMENTS.md",
+      "before": null,
+      "after": "888f0ceac680122f160339071cdc7db1ac901a5b267886db83733ecbfe353794"
+    },
+    {
+      "path": "SKILL.md",
+      "before": "c3e9903c3a1f1e73417895576826ed5c461bf08770f308d1a112b502615305a0",
+      "after": "58ecf8cc760d59d6d39e6f91d0072486eb3a273c403ee88da2d82081f7a3d1ab"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "before": "7bfd2a066224515a33ff5b111619554c5113a4b5bcecb484bfc675087c9cd98f",
+      "after": "2131043f3b69f23edac6074f9ee68fdd719caea0fa62bc151850257567f6433e"
+    },
+    {
+      "path": "references/collaboration-and-validation.md",
+      "before": "0236dbeacf69884034f92e7b20cac8b5653c5f22057cd0225ef97ebcb12d9140",
+      "after": "48354d77307ff6c3cf0c06797066299f05e6b4642b85ea053d09f7d0236eecfe"
+    },
+    {
+      "path": "scripts/freeze_run.py",
+      "before": null,
+      "after": "bf77bde05bd4f355d4f846ed3b851a2ac0e43300bed6d47fdb76d8384311760a"
+    },
+    {
+      "path": "tests/test_freeze_run.py",
+      "before": null,
+      "after": "e138485f914a01326b8180b2da686fa8b01c99ae7f0ff68a0313cde5663b2a4a"
+    },
+    {
+      "path": "tests/update-2026-09-30/VALIDATION.md",
+      "before": null,
+      "after": "abb0d78d67b5db0cee7133896784ef49522d7b2c0066aefc7269c8eb1dcb3164"
+    },
+    {
+      "path": "tests/update-2026-09-30/evaluation-record.json",
+      "before": null,
+      "after": "2f42dcddffb0a92cb557cf121ed8fbe7c248828e6c0114e73c4a2ee50cbbcb33"
+    },
+    {
+      "path": "tests/update-2026-09-30/forward-evaluation/recheck-results.json",
+      "before": null,
+      "after": "df6ace4403e44f96b61fd7f6cbad07deb43807dfefcc87478098700a8df78d83"
+    },
+    {
+      "path": "tests/update-2026-09-30/forward-evaluation/recheck.md",
+      "before": null,
+      "after": "6d2e5eb01173fc277d7435b836b276f01e340b028ddebe3556f2a90438ad95d3"
+    },
+    {
+      "path": "tests/update-2026-09-30/forward-evaluation/report.md",
+      "before": null,
+      "after": "2e02e34d64c80e446ce3f2bf82eb3d441533efb7f938d2e5590583d7a223ff19"
+    },
+    {
+      "path": "tests/update-2026-09-30/forward-evaluation/results.json",
+      "before": null,
+      "after": "904c897f16f1b822422a05ece4769c61d5818f1e37495e8ea65878e7dd6a2aec"
+    },
+    {
+      "path": "tests/update-2026-09-30/forward-evaluation/run-fixtures.py",
+      "before": null,
+      "after": "16dfd99b6814766417658ba6ab8a143cd9c4b25b218d943ef622860a2486c1a6"
+    },
+    {
+      "path": "tests/update-2026-09-30/forward-evaluation/run-recheck.py",
+      "before": null,
+      "after": "1492cb965c90f45d2bca06a2c2381844d6eaddd0af453a6a7e9113c6a590fa8e"
+    },
+    {
+      "path": "tests/update-2026-09-30/independent-audit/probe-results.json",
+      "before": null,
+      "after": "012ef21fda2919429052ed47c952cba2e7b6d28e480ca288c7ae9afb4683feaa"
+    },
+    {
+      "path": "tests/update-2026-09-30/independent-audit/probe.py",
+      "before": null,
+      "after": "385df9107ec8fe691cc312a58588dfde8efc41892b60b89f126b3a78a7a25612"
+    },
+    {
+      "path": "tests/update-2026-09-30/independent-audit/recheck-results.json",
+      "before": null,
+      "after": "69f35fa165575f4fbf19553279629baca301afa169d546f38199ae32f2c67337"
+    },
+    {
+      "path": "tests/update-2026-09-30/independent-audit/recheck.md",
+      "before": null,
+      "after": "be9a3790af9d8d0391fd6764be7c4ab713a99f80111299acce40a310db74c4af"
+    },
+    {
+      "path": "tests/update-2026-09-30/independent-audit/recheck_probe.py",
+      "before": null,
+      "after": "10e66f65d68e696d242898b5b463a768e258e67083a8f3b7a5076c6a4147e53c"
+    },
+    {
+      "path": "tests/update-2026-09-30/independent-audit/report.md",
+      "before": null,
+      "after": "52925ab1717dbd46e3b9b88feabba742fbbbc6cd8d686cb1ad6f5cb193036e80"
+    },
+    {
+      "path": "tests/update-2026-09-30/run-validation.py",
+      "before": null,
+      "after": "7e8caca7f25ad0085b5392c04b140ee7030017b348e86de7bdf3b4f91d06f012"
+    },
+    {
+      "path": "tests/update-2026-09-30/snapshot-smoke.json",
+      "before": null,
+      "after": "5f469bc7bd479eaa82dc35a40f22ab252d9791f634cc294b91c396fe7f1cb9b1"
+    },
+    {
+      "path": "tests/update-2026-09-30/static-checks.json",
+      "before": null,
+      "after": "fd7f10cc7c98b4b0a4c7953fd9667776e85f8ce2bdc3d5a286f0f3d1d9387d83"
+    },
+    {
+      "path": "tests/update-2026-09-30/validation-commands.json",
+      "before": null,
+      "after": "742ec1b41e494b664f1547e7f8e38f56d0c8669b620a9484bdf66e05c7d247c7"
+    }
+  ],
+  "updated_hashes_match": true,
+  "preexisting_untouched_files_preserved": true,
+  "limits": "This verifies installed bytes, not invocation behavior or runtime model effectiveness."
+}

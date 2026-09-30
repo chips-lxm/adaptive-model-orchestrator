@@ -1,0 +1,32 @@
+{
+  "adaptive-model-orchestrator": {
+    "runtime_digest": "20822d2ce4f764eae3ea3a2fdb8b2c7fa51cb8943521a4a42d2f6493f4f940ad",
+    "release_sha256": "d66e188d3f61d43429b7626f92533f082deac59254b378d1999cbdf077738240",
+    "real_snapshot_verified": true,
+    "copied_verifier_exit": 0,
+    "partial_install_rejection": "ValueError: Runtime content differs from its manifest",
+    "missing_manifest_rejection": "FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/skill-astra-20260930/tmp/tmpn8rz37bm/fixture/runtime-manifest.json'",
+    "explicitly_sealed_complete_update_accepted": true,
+    "corrupted_frozen_release_rejection": "ValueError: Runtime content differs from its manifest",
+    "manifest_change_during_copy_rejection": "ValueError: Release manifest changed during snapshot creation",
+    "plugin_destination_rejection": "ValueError: Use a non-discoverable output directory outside the source skill",
+    "custom_codex_home_plugin_rejection": "ValueError: Use a non-discoverable output directory outside the source skill",
+    "source_runtime_unchanged": true,
+    "source_release_unchanged": true
+  },
+  "deep-project-review": {
+    "runtime_digest": "a4768b6532161201f29ab6b8dbec5a0932acb9f690382f40eb4c461b117ee6b8",
+    "release_sha256": "c542860ccd30d3e2e916480e2ea2dab7894501aa741a82935b2a5568fd0ede60",
+    "real_snapshot_verified": true,
+    "copied_verifier_exit": 0,
+    "partial_install_rejection": "ValueError: Runtime content differs from its manifest",
+    "missing_manifest_rejection": "FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/skill-astra-20260930/tmp/tmp96hul_vo/fixture/runtime-manifest.json'",
+    "explicitly_sealed_complete_update_accepted": true,
+    "corrupted_frozen_release_rejection": "ValueError: Runtime content differs from its manifest",
+    "manifest_change_during_copy_rejection": "ValueError: Release manifest changed during snapshot creation",
+    "plugin_destination_rejection": "ValueError: Use a non-discoverable output directory outside the source skill",
+    "custom_codex_home_plugin_rejection": "ValueError: Use a non-discoverable output directory outside the source skill",
+    "source_runtime_unchanged": true,
+    "source_release_unchanged": true
+  }
+}

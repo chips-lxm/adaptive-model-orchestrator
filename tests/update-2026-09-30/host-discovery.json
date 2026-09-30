@@ -1,0 +1,44 @@
+{
+  "test": "Actual local Codex app-server skills/list with forceReload; no model turn started",
+  "cwd": "/Users/lxm/app1",
+  "matches": [
+    {
+      "name": "adaptive-model-orchestrator",
+      "description": "用于完整项目、自主长任务、希望减少监督的交付，以及可独立研究、实现或验收的多模型协作。先评估分工收益，再按难度、依赖和验收风险组织子智能体；简单问答、单点修改和紧密串行任务通常直接完成。",
+      "interface": {
+        "displayName": "自适应多模型编排器",
+        "shortDescription": "按收益组织协作，以 6.1 Sol high 起步，按难点升级并完成独立验收",
+        "iconSmall": null,
+        "iconLarge": null,
+        "iconSmallUrl": null,
+        "iconLargeUrl": null,
+        "brandColor": null,
+        "defaultPrompt": "Use $adaptive-model-orchestrator to coordinate useful parallel work across the lead and subagents, wait when dependencies require it, and validate the integrated result."
+      },
+      "path": "/Users/lxm/.codex/skills/adaptive-model-orchestrator/SKILL.md",
+      "scope": "user",
+      "enabled": true,
+      "pluginId": null
+    },
+    {
+      "name": "deep-project-review",
+      "description": "对已有可检查版本的项目进行独立深度二次审查，由多个真实子智能体审查、Astra 极高复核，再按授权调度修复与独立验收。仅限用户显式调用，或经已配置的入口明确要求深入独立复审；普通检查、项目完成、讨论或制作本 Skill 均不启动。",
+      "interface": {
+        "displayName": "项目深度复审",
+        "shortDescription": "明确启动的独立复审，6.1 Sol high 起步，保留 Astra 极高复核",
+        "iconSmall": null,
+        "iconLarge": null,
+        "iconSmallUrl": null,
+        "iconLargeUrl": null,
+        "brandColor": null,
+        "defaultPrompt": "使用 $deep-project-review 对当前指定项目进行独立深度复审，并依据已有修改授权安排修复和验收。"
+      },
+      "path": "/Users/lxm/.codex/skills/deep-project-review/SKILL.md",
+      "scope": "user",
+      "enabled": true,
+      "pluginId": null
+    }
+  ],
+  "errors": [],
+  "limits": "Confirms discovery, enabled entries and installed paths. Does not establish fresh-session invocation routing, effective implicit policy or model configuration."
+}

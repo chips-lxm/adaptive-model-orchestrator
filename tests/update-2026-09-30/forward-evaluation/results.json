@@ -1,0 +1,229 @@
+[
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/fixture-0/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-0/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-0/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-0/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-0/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-0/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "case": "source updated after freeze",
+    "skill": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator/scripts/freeze_run.py",
+    "snapshot_has_A": true,
+    "source_has_B": true,
+    "verification_exit_code": 0,
+    "historical_test_copied": false,
+    "maintenance_docs_copied": false
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/fixture-0/existing"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/fixture-0/existing'"
+  },
+  {
+    "case": "pre-existing nonempty output",
+    "exit_code": 1,
+    "sentinel_preserved": true
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/fixture-0/empty"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/fixture-0/empty'"
+  },
+  {
+    "case": "pre-existing empty output",
+    "exit_code": 1,
+    "directory_preserved": true
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-0/snapshot"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Snapshot content differs from its manifest"
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-0/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-0/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-0/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "case": "extra file outside runtime allowlist",
+    "verification_exit_code": 0
+  },
+  {
+    "case": "source change during copy",
+    "error": "Source changed during snapshot creation; retry from a stable version",
+    "output_removed": true
+  },
+  {
+    "case": "plugin-style installation path recognizer",
+    "path": "/private/tmp/skill-forward-20260930/fixture-0/.codex/plugins/cache/plugin/skills/snapshot",
+    "is_discovery_path": false
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/fixture-1/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-1/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-1/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-1/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-1/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-1/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "case": "source updated after freeze",
+    "skill": "/Users/lxm/app1/github-preview/deep-project-review/scripts/freeze_run.py",
+    "snapshot_has_A": true,
+    "source_has_B": true,
+    "verification_exit_code": 0,
+    "historical_test_copied": false,
+    "maintenance_docs_copied": false
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/fixture-1/existing"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/fixture-1/existing'"
+  },
+  {
+    "case": "pre-existing nonempty output",
+    "exit_code": 1,
+    "sentinel_preserved": true
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--output",
+      "/private/tmp/skill-forward-20260930/fixture-1/empty"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: [Errno 17] File exists: '/private/tmp/skill-forward-20260930/fixture-1/empty'"
+  },
+  {
+    "case": "pre-existing empty output",
+    "exit_code": 1,
+    "directory_preserved": true
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-1/snapshot"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Snapshot failed: Snapshot content differs from its manifest"
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/private/tmp/skill-forward-20260930/fixture-1/source/scripts/freeze_run.py",
+      "--verify",
+      "/private/tmp/skill-forward-20260930/fixture-1/snapshot"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/tmp/skill-forward-20260930/fixture-1/snapshot/SKILL.md\", \"digest\": \"6a8729e05cce3d07d23501cf43ac355bd486d6ba9eb8fa49ce65550ffaf08d0a\", \"files\": 4, \"verified\": true}",
+    "stderr": ""
+  },
+  {
+    "case": "extra file outside runtime allowlist",
+    "verification_exit_code": 0
+  },
+  {
+    "case": "source change during copy",
+    "error": "Source changed during snapshot creation; retry from a stable version",
+    "output_removed": true
+  },
+  {
+    "case": "plugin-style installation path recognizer",
+    "path": "/private/tmp/skill-forward-20260930/fixture-1/.codex/plugins/cache/plugin/skills/snapshot",
+    "is_discovery_path": false
+  },
+  {
+    "case": "source helpers equal",
+    "sha256": [
+      "227838b079d8154b03a87ec45253533e52e2c28338dc80b512896ff3eb523f8a",
+      "227838b079d8154b03a87ec45253533e52e2c28338dc80b512896ff3eb523f8a"
+    ]
+  }
+]

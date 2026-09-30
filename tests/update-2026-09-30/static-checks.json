@@ -1,0 +1,24 @@
+{
+  "format_validator": "passed",
+  "yaml_policy": true,
+  "yaml_and_toml": "passed",
+  "local_links_checked": 31,
+  "local_link_scope": "Current root, reference, documentation and example Markdown; file targets only, no external URLs or anchors",
+  "link_errors": [],
+  "snapshot_unit_tests": {
+    "tests": 10,
+    "exit_code": 0
+  },
+  "runtime_digest": "2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6",
+  "runtime_file_hashes": {
+    "LICENSE": "e397043d7f4908ebe24a4701481b082eef18945240a42646ba5b46b3576957df",
+    "README.md": "97084b47415f22ce3d3e333c54feb2022d243f8f3b078b72ad3e4000146de5aa",
+    "README.zh-CN.md": "01f0b055386bae9eee11ce5c935dfbe253e2138913d2e924031226adee32ece7",
+    "SKILL.md": "58ecf8cc760d59d6d39e6f91d0072486eb3a273c403ee88da2d82081f7a3d1ab",
+    "agents/openai.yaml": "2131043f3b69f23edac6074f9ee68fdd719caea0fa62bc151850257567f6433e",
+    "assets/social-preview.png": "2022072190b8eda7f811f166df98308ee248088d5e7b458911024633eabe7e1a",
+    "references/collaboration-and-validation.md": "48354d77307ff6c3cf0c06797066299f05e6b4642b85ea053d09f7d0236eecfe",
+    "scripts/freeze_run.py": "bf77bde05bd4f355d4f846ed3b851a2ac0e43300bed6d47fdb76d8384311760a"
+  },
+  "release_manifest_sha256": "c40cff33d5a451c646985ef99b404bb86e8026f9dbb27fc5a9e60c75e4c1e97f"
+}

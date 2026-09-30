@@ -1,0 +1,42 @@
+{
+  "scope": "Skill maintenance validation; not a deep-project-review run against a live project",
+  "forward": {
+    "task": "/root/forward_check",
+    "requested": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "fork_turns": "none"
+    },
+    "tool_result": "accepted; task completed",
+    "effective_model": null,
+    "effective_effort": null
+  },
+  "audit": {
+    "task": "/root/independent_audit",
+    "requested": {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "fork_turns": "none"
+    },
+    "tool_result": "accepted; task completed",
+    "effective_model": null,
+    "effective_effort": null
+  },
+  "configuration_evidence": "Structured collaboration.spawn_agent model and reasoning_effort overrides accepted under the current tool contract. No independent effective-configuration echo is available from spawn/list_agents; agents' self-identification is not used as evidence.",
+  "isolation": "Separate initial contexts; neither evaluator received the other report or wrote source files. Followups inspected only changed areas; original reports preserved.",
+  "archived_sha256": {
+    "forward-evaluation/report.md": "2e02e34d64c80e446ce3f2bf82eb3d441533efb7f938d2e5590583d7a223ff19",
+    "forward-evaluation/results.json": "904c897f16f1b822422a05ece4769c61d5818f1e37495e8ea65878e7dd6a2aec",
+    "forward-evaluation/run-fixtures.py": "16dfd99b6814766417658ba6ab8a143cd9c4b25b218d943ef622860a2486c1a6",
+    "forward-evaluation/recheck.md": "6d2e5eb01173fc277d7435b836b276f01e340b028ddebe3556f2a90438ad95d3",
+    "forward-evaluation/recheck-results.json": "df6ace4403e44f96b61fd7f6cbad07deb43807dfefcc87478098700a8df78d83",
+    "forward-evaluation/run-recheck.py": "1492cb965c90f45d2bca06a2c2381844d6eaddd0af453a6a7e9113c6a590fa8e",
+    "independent-audit/report.md": "52925ab1717dbd46e3b9b88feabba742fbbbc6cd8d686cb1ad6f5cb193036e80",
+    "independent-audit/probe.py": "385df9107ec8fe691cc312a58588dfde8efc41892b60b89f126b3a78a7a25612",
+    "independent-audit/probe-results.json": "012ef21fda2919429052ed47c952cba2e7b6d28e480ca288c7ae9afb4683feaa",
+    "independent-audit/recheck.md": "be9a3790af9d8d0391fd6764be7c4ab713a99f80111299acce40a310db74c4af",
+    "independent-audit/recheck_probe.py": "10e66f65d68e696d242898b5b463a768e258e67083a8f3b7a5076c6a4147e53c",
+    "independent-audit/recheck-results.json": "69f35fa165575f4fbf19553279629baca301afa169d546f38199ae32f2c67337"
+  },
+  "post_recheck_change": "Adaptive Chinese README installation sentence corrected to remove duplicated wording; runtime manifest intentionally resealed. No operational rule or helper changed after rechecks."
+}

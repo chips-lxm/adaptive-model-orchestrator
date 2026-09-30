@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/Users/lxm/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "/Users/lxm/app1/github-preview/adaptive-model-orchestrator"
+    ],
+    "cwd": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator",
+    "exit_code": 0,
+    "stdout": "Skill is valid!\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "tests/test_freeze_run.py"
+    ],
+    "cwd": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.024s\n\nOK\n"
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "scripts/freeze_run.py",
+      "--output",
+      "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-final-20260930-g9fntlph/snapshot"
+    ],
+    "cwd": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator",
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-final-20260930-g9fntlph/snapshot/SKILL.md\", \"digest\": \"2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6\", \"files\": 8, \"verified\": true}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-final-20260930-g9fntlph/snapshot/scripts/freeze_run.py",
+      "--verify",
+      "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-final-20260930-g9fntlph/snapshot"
+    ],
+    "cwd": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator",
+    "exit_code": 0,
+    "stdout": "{\"skill_file\": \"/private/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-final-20260930-g9fntlph/snapshot/SKILL.md\", \"digest\": \"2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6\", \"files\": 8, \"verified\": true}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback/git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/Users/lxm/app1/github-preview/adaptive-model-orchestrator",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

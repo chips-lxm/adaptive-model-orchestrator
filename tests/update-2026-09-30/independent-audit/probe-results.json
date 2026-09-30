@@ -1,0 +1,53 @@
+{
+  "adaptive-model-orchestrator": {
+    "source_digest": "0bf3b95ad9aa8c7d96d6d3d00555a68cb582e7e094da85121278bce6621ba7e5",
+    "source_files": {
+      "LICENSE": "e397043d7f4908ebe24a4701481b082eef18945240a42646ba5b46b3576957df",
+      "README.md": "a0ce2c0be76869571a3330ae204efc361571d8d4a50a6e69acd51203d57e06cf",
+      "README.zh-CN.md": "24778606371034e5cde30fff14016fe5e3d36179a079de297e6a51f4e6d2d999",
+      "SKILL.md": "58ecf8cc760d59d6d39e6f91d0072486eb3a273c403ee88da2d82081f7a3d1ab",
+      "agents/openai.yaml": "2131043f3b69f23edac6074f9ee68fdd719caea0fa62bc151850257567f6433e",
+      "assets/social-preview.png": "2022072190b8eda7f811f166df98308ee248088d5e7b458911024633eabe7e1a",
+      "references/collaboration-and-validation.md": "dde264c575c583623cb6fa29b3a81a63ead6f7b38b01953950229100b71c3ced",
+      "scripts/freeze_run.py": "227838b079d8154b03a87ec45253533e52e2c28338dc80b512896ff3eb523f8a"
+    },
+    "real_snapshot": {
+      "skill_file": "/private/tmp/skill-astra-20260930/tmp/tmpdbw453ov/real-snapshot/SKILL.md",
+      "digest": "0bf3b95ad9aa8c7d96d6d3d00555a68cb582e7e094da85121278bce6621ba7e5",
+      "files": 8,
+      "verified": true
+    },
+    "frozen_script_verify_exit": 0,
+    "frozen_script_verify_stdout": "{\"skill_file\": \"/private/tmp/skill-astra-20260930/tmp/tmpdbw453ov/real-snapshot/SKILL.md\", \"digest\": \"0bf3b95ad9aa8c7d96d6d3d00555a68cb582e7e094da85121278bce6621ba7e5\", \"files\": 8, \"verified\": true}",
+    "source_unchanged_after": true,
+    "stable_partial_install_accepted": true,
+    "partial_install_explanation": "v2 SKILL plus v1 reference already present before freeze. This tests release coherence, not copy-time byte stability."
+  },
+  "deep-project-review": {
+    "source_digest": "aa793ac115500e97dd048f99c3a7dcc8295312dc94265f903571e308b24e24ff",
+    "source_files": {
+      "LICENSE": "a90aede825b36ef43f74958030d5b58ff154afe76ce04775a1d95e2b089b8021",
+      "README.md": "0a56c4d3327314532fcf2f93bbf789ea5e7a93f5a32acbb63657d2023c3ddb3b",
+      "README.zh-CN.md": "a0ce538c6a643900ea5e3cced00e2e81ef5d715d57973c81b8b3121531ed2e44",
+      "SKILL.md": "754037a4cdf41b95f6f161dd481868c952af8115024823a272d30409c17ed271",
+      "agents/openai.yaml": "9a874493358e818a09151735ce86a6b522d8bf348a0604def5d7b1078e8b9d69",
+      "assets/social-preview.png": "825ed9ff85d0cdc6d622970ff113c7c666a914f4b1af7acda9e376469ad51ce3",
+      "examples/AGENTS-entry.md": "e665539c0482bd2b14c6e511fe9082b46bb057b741cb3e7c7677e2aaa24e789b",
+      "examples/astra-reviewer.toml": "54c084e479f8081de3f5b86220c0f031d946cda74d0cd9c142f33dc0e5c76369",
+      "references/runtime.md": "3b926fe8397d4ecc4e2f29ab29bf0f5e7161f78a4d5840c67d985f6d1ca68684",
+      "references/templates.md": "a8df5506b9488448aa8a9126251d2c1f8038adba34e0224d9560457f863be736",
+      "scripts/freeze_run.py": "227838b079d8154b03a87ec45253533e52e2c28338dc80b512896ff3eb523f8a"
+    },
+    "real_snapshot": {
+      "skill_file": "/private/tmp/skill-astra-20260930/tmp/tmpin7ujndb/real-snapshot/SKILL.md",
+      "digest": "aa793ac115500e97dd048f99c3a7dcc8295312dc94265f903571e308b24e24ff",
+      "files": 11,
+      "verified": true
+    },
+    "frozen_script_verify_exit": 0,
+    "frozen_script_verify_stdout": "{\"skill_file\": \"/private/tmp/skill-astra-20260930/tmp/tmpin7ujndb/real-snapshot/SKILL.md\", \"digest\": \"aa793ac115500e97dd048f99c3a7dcc8295312dc94265f903571e308b24e24ff\", \"files\": 11, \"verified\": true}",
+    "source_unchanged_after": true,
+    "stable_partial_install_accepted": true,
+    "partial_install_explanation": "v2 SKILL plus v1 reference already present before freeze. This tests release coherence, not copy-time byte stability."
+  }
+}

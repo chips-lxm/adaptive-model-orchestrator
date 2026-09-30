@@ -1,5 +1,14 @@
 # Change notes / 更新说明
 
+## 2026-09-30
+
+GPT-6.1 Sol is now the default execution and ordinary-review route, starting at high with direct xhigh/max selection for justified difficulty. GPT-6 Sol remains an evidence-backed option. Luna high, user-selected lead configuration, independent acceptance, and risk-based Astra review remain intact.
+
+新增运行快照工具与完整性校验，使长任务及分支固定本轮规则；共同背景只维护一次，按版本、输入和环境判断证据是否仍有效，独立验收仍亲自执行关键检查。深度复审的明确启动与 Astra xhigh 不受通用路由覆盖。
+
+本次验证与未验证项见 [验证报告](tests/update-2026-09-30/VALIDATION.md)。历史结果保留原日期和模型；不宣称 max 与 Astra 全面等价或固定 Token 节省。
+
+
 ## 2026-09-23
 
 ### 模型路由更新 / Model routing update

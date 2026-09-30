@@ -5,11 +5,11 @@
 ```mermaid
 flowchart LR
   L["当前会话：用户选择的主模型"] --> A["gpt-6-astra：困难推理"]
-  L --> S["gpt-6-sol：协调与实现"]
+  L --> S["gpt-6.1-sol：实现与审查"]
   L --> U["gpt-6-luna · high：边界明确且可验证的工作"]
 ```
 
-Adaptive Model Orchestrator 是一个 Codex Skill：根据任务难度、可并行性、依赖关系和验收风险，在 gpt-6-astra、gpt-6-sol 与 gpt-6-luna 之间组织有实际收益的协作，同时权衡整体交付效率与协调成本。当前会话先理解用户要求，并保持用户选定的主模型。
+Adaptive Model Orchestrator 是一个 Codex Skill：根据任务难度、可并行性、依赖关系和验收风险，在 gpt-6-astra、gpt-6.1-sol 与 gpt-6-luna 之间组织有实际收益的协作，同时权衡整体交付效率与协调成本。当前会话先理解用户要求，并保持用户选定的主模型。
 
 **前期多一点判断，后期少一些返工。**
 
@@ -25,7 +25,7 @@ Adaptive Model Orchestrator 是一个 Codex Skill：根据任务难度、可并�
 - **避免重复实现和修改冲突**：主智能体与分支同样遵守单一修改负责人规则，接管前先停止原执行并交接。不能仅因同属一个业务模块，就把修改范围独立的工作串行化。
 - **控制检查成本**：结果返回时先做相关集成检查，最终再验收整体；只有独立复核的预期价值超过交接与协调成本时，才另开验收分支。
 
-当前模型映射见 [2026-09-23 更新说明](CHANGELOG.md#2026-09-23)。[迁移验证报告](tests/migration-2026-09-23/VALIDATION.md) 记录检查范围与限制；此前结果属于历史记录。
+当前模型映射见 [2026-09-30 更新说明](CHANGELOG.md#2026-09-30) 和[本次验证](tests/update-2026-09-30/VALIDATION.md)。[2026-09-23 报告](tests/migration-2026-09-23/VALIDATION.md) 保留原版本验证范围。
 
 完整项目、自主长任务和减少监督的请求仍先评估协作收益，不会自动创建分支。局部执行使用必要背景；涉及意图、架构和整体结果的判断保留原始要求与相关历史。这些规则随 skill 按需读取，无需新增全局 `AGENTS.md` 规则。自动匹配仍取决于宿主、技能描述和当前上下文；需要明确使用时，可以直接点名技能。
 
@@ -38,10 +38,10 @@ Adaptive Model Orchestrator 是一个 Codex Skill：根据任务难度、可并�
 使用自适应路由
 简单工作         → 当前会话
 复杂方案         → Astra
-协调与集成       → Sol · medium/high
-代码和文件实现   → Sol · medium/high（必要时 xhigh）
+任务协调         → 当前主会话
+代码和文件实现   → 6.1 Sol · high 起步；按难点 xhigh/max
 边界明确的低风险任务 → Luna · high
-整体验收         → Sol；高风险部分再由 Astra 复核
+整体验收         → 6.1 Sol；高风险部分由 Astra 复核
 ```
 
 困难任务不自动等于并行任务。只有子任务可以独立推进并返回可验证结果时，Skill 才创建分支。
@@ -53,12 +53,13 @@ Adaptive Model Orchestrator 是一个 Codex Skill：根据任务难度、可并�
 | 路径明确且没有值得独立推进的子任务 | 当前会话直接完成 |
 | 多个步骤但依赖紧密 | 由一个负责人统筹，只拆出独立资料或检查任务 |
 | 多个可独立交付并验证的部分 | 有收益时同时派发已就绪且互不冲突的任务，主智能体同步推进自己的工作 |
-| 困难但不可拆分的核心问题 | 由 Astra 集中解决，必要时增加独立复核 |
+| 困难但不可拆分的核心问题 | 根据核心难点选 6.1 Sol xhigh/max 或 Astra，必要时增加独立复核 |
 
 默认职责：
 
 - **gpt-6-astra**：困难推导、整体方案、关键约束冲突与高风险最终验收；职责保持不变。
-- **gpt-6-sol**：需求整理、协作协调、内容表达、工具操作、代码、文件制作、复杂布局、结果集成与跨模块检查。使用 `medium` 或 `high`，必要时使用 `xhigh`。
+- **gpt-6.1-sol**：默认实现、分析、内容制作、结果集成和跨模块审查。`high` 起步；有明确难点时直接 `xhigh` / `max`，不自动降档。
+- **gpt-6-sol**：保留已有验证支持或同任务对照支持的适用路径，使用 `medium / high`，必要时 `xhigh`；不作默认中间层或静默回退。
 - **gpt-6-luna**：规则明确、边界清晰、低风险且容易核对的任务；始终使用 `high` 推理强度。
 
 这些只是默认路由，不要求每个任务使用所有模型，也不要求每个角色单独开一个智能体。模型合并不等于合并必须独立的审查者与修复者职责；不要求独立性时，主智能体可以兼任执行与协调。最终安排始终服从实际环境能力和用户授权。
@@ -74,10 +75,10 @@ Adaptive Model Orchestrator 是一个 Codex Skill：根据任务难度、可并�
 可能的编排结果：
 
 1. 主智能体先明确稳定接口与验收标准；涉及困难架构或安全判断时，按需由 **Astra · high** 参与。
-2. 前置输入就绪后，可由 **gpt-6-sol · medium/high** 同时推进修改范围互不冲突的后端和前端工作；特别困难的实现可用 `xhigh`。主智能体在自己的修改范围内同步完成独立的部署配置或集成准备。
+2. 前置输入就绪后，可由 **gpt-6.1-sol · high/xhigh/max** 同时推进修改范围互不冲突的后端和前端工作；明确困难的实现可直接使用 `xhigh` 或 `max`。主智能体在自己的修改范围内同步完成独立的部署配置或集成准备。
 3. 输入就绪且委派有收益时，可把边界明确、低风险的文档或常规检查交给 **gpt-6-luna · high**；不会仅因有空闲额度就创建分支。
 4. 稳定结果返回后，主智能体检查交付并启动依赖已满足的后续工作；剩余有用工作都受阻时才等待，不重复实现正在执行的任务。
-5. 集成后的系统仍需最终验收。常规与困难审查分别优先路由至 **Sol** 和 **Astra**；主智能体可以合并职责，只有预期收益足够时才另设验收分支。
+5. 集成后的系统仍需最终验收。常规与高风险审查分别优先路由至 **6.1 Sol** 和 **Astra**；主智能体可以合并职责，只有预期收益足够时才另设验收分支。
 
 核心问题不可拆分且分支更适合处理时，主智能体可以委派后等待，不强行制造并行工作。
 
@@ -99,7 +100,7 @@ git clone https://github.com/chips-lxm/adaptive-model-orchestrator.git ~/.codex/
 git -C ~/.codex/skills/adaptive-model-orchestrator pull --ff-only
 ```
 
-如果原来手动复制安装，先备份自定义内容，再从同一版本同步替换 `SKILL.md`、`agents/openai.yaml` 和 `references/collaboration-and-validation.md`。
+如果原来手动复制安装，先备份自定义内容，再从同一版本同步运行文件，包括 `SKILL.md`、`agents/`、`references/` 和 `scripts/`。
 
 ## 项目结构
 
@@ -107,6 +108,7 @@ git -C ~/.codex/skills/adaptive-model-orchestrator pull --ff-only
 adaptive-model-orchestrator/
 ├── SKILL.md
 ├── agents/openai.yaml
+├── scripts/freeze_run.py
 └── references/collaboration-and-validation.md
 ```
 
@@ -122,6 +124,18 @@ adaptive-model-orchestrator/
 - 验证集成后的整体结果，而不是只看各分支分别通过。
 - 只报告已确认的实际模型和推理强度；环境未提供的信息标为未知，不把请求配置当作实际配置。
 - 达到验收标准后停止。
+
+
+## 运行版本与验证
+
+2026-09-30 路由以 6.1 Sol `high` 起步，有明确难点时可直接选 `xhigh` 或 `max`。旧 6 Sol 保留已验证的适用路径；Luna 固定 `high`；项目深度复审始终保留单独的 Astra `xhigh` 复核。这些是执行策略，不是已测得的质量或 Token 节省保证。
+
+长任务或多智能体运行时，在不会被自动发现的证据目录使用 `python3 scripts/freeze_run.py --output /绝对路径/本轮证据/skill-snapshot`。所有分支和续答读取快照入口及其相对资源；用 `python3 scripts/freeze_run.py --verify /绝对路径/本轮证据/skill-snapshot` 核对完整性。快照包含运行资源，排除 Git 和历史测试；只记版本号不能固定文件。安装更新应在活动任务结束或安排明确切换点后进行。
+
+
+快照创建前会核对随包的 `runtime-manifest.json`，拒绝冻结部分更新的安装；该文件必须与运行文件一起同步。维护者在有意修改后用 `python3 -B scripts/freeze_run.py --seal` 重建清单，正常运行不得用它绕过完整性失败。
+
+本次结果见[验证记录](tests/update-2026-09-30/VALIDATION.md)。维护入口为 [AGENTS.md](AGENTS.md)、[已确认要求](REQUIREMENTS.md) 和[交接](HANDOFF.md)。
 
 ## 许可证
 

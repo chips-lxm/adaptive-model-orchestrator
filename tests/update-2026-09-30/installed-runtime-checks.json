@@ -1,0 +1,34 @@
+{
+  "installed": "/Users/lxm/.codex/skills/adaptive-model-orchestrator",
+  "matches_source_runtime": true,
+  "release_manifest_matches_source": true,
+  "digest": "2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6",
+  "files": 8,
+  "commands": [
+    {
+      "command": [
+        "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/Users/lxm/.codex/skills/adaptive-model-orchestrator/scripts/freeze_run.py",
+        "--output",
+        "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/installed-skills-20260930-rzdvzfb9/snapshot"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"skill_file\": \"/private/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/installed-skills-20260930-rzdvzfb9/snapshot/SKILL.md\", \"digest\": \"2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6\", \"files\": 8, \"verified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/installed-skills-20260930-rzdvzfb9/snapshot/scripts/freeze_run.py",
+        "--verify",
+        "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/installed-skills-20260930-rzdvzfb9/snapshot"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"skill_file\": \"/private/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/installed-skills-20260930-rzdvzfb9/snapshot/SKILL.md\", \"digest\": \"2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6\", \"files\": 8, \"verified\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "temporary_snapshot_removed": true
+}
