@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-30",
+  "repository": "chips-lxm/adaptive-model-orchestrator",
+  "release_url": "https://github.com/chips-lxm/adaptive-model-orchestrator/releases/tag/v0.3.0",
+  "tag": "v0.3.0",
+  "release_commit": "8a574700c6562d9294284d80d296629356800e3b",
+  "implementation_commit": "13b632a3409e2dc8bd8687a7a43ee366efef6a84",
+  "published_at": "2026-09-30T08:30:07Z",
+  "is_draft": false,
+  "is_prerelease": false,
+  "latest_release_verified": "v0.3.0",
+  "remote_main_and_annotated_tag_verified_at_publication": "8a574700c6562d9294284d80d296629356800e3b",
+  "release_notes_match_local_source": true,
+  "notes_location": "CHANGELOG.md",
+  "assets": [
+    {
+      "name": "adaptive-model-orchestrator.zip",
+      "size": 1066807,
+      "digest": "sha256:632852615ac930f34553ee737c2747989ad077907c6602e44f47ae7136d085be",
+      "state": "uploaded",
+      "url": "https://github.com/chips-lxm/adaptive-model-orchestrator/releases/download/v0.3.0/adaptive-model-orchestrator.zip"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 98,
+      "digest": "sha256:306bed397fd685bf5c8b36bc49527e8cc8c191503fce626091629298d2b683f7",
+      "state": "uploaded",
+      "url": "https://github.com/chips-lxm/adaptive-model-orchestrator/releases/download/v0.3.0/SHA256SUMS.txt"
+    }
+  ],
+  "package_checks": {
+    "repository": "chips-lxm/adaptive-model-orchestrator",
+    "tag": "v0.3.0",
+    "commit": "8a574700c6562d9294284d80d296629356800e3b",
+    "archive": "adaptive-model-orchestrator.zip",
+    "archive_sha256": "632852615ac930f34553ee737c2747989ad077907c6602e44f47ae7136d085be",
+    "archive_size": 1066807,
+    "checksum_file": "SHA256SUMS.txt",
+    "checksum_file_sha256": "306bed397fd685bf5c8b36bc49527e8cc8c191503fce626091629298d2b683f7",
+    "archive_entries": 120,
+    "zip_integrity_passed": true,
+    "runtime_manifest_matches_source": true,
+    "release_notes_match_source": true,
+    "archive_snapshot_checks": [
+      {
+        "command": [
+          "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-release-check-ab3942sw/adaptive-model-orchestrator/scripts/freeze_run.py",
+          "--output",
+          "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-release-check-ab3942sw/snapshot"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"skill_file\": \"/private/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-release-check-ab3942sw/snapshot/SKILL.md\", \"digest\": \"2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6\", \"files\": 8, \"verified\": true}\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/Users/lxm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-release-check-ab3942sw/snapshot/scripts/freeze_run.py",
+          "--verify",
+          "/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-release-check-ab3942sw/snapshot"
+        ],
+        "exit_code": 0,
+        "stdout": "{\"skill_file\": \"/private/var/folders/b3/xm5kc5tx1rd3wqz89jggmybh0000gn/T/skill-release-check-ab3942sw/snapshot/SKILL.md\", \"digest\": \"2764e60bcf828a467b5f65f3bbe5d85c06c8ef43948f514db1efdb6d4eb97ac6\", \"files\": 8, \"verified\": true}\n",
+        "stderr": ""
+      }
+    ],
+    "limits": "Packaging checks; prior instruction and behavioral validation remains in tests/update-2026-09-30/VALIDATION.md. No runtime rules changed for publication."
+  },
+  "runtime_manifest_sha256": "c40cff33d5a451c646985ef99b404bb86e8026f9dbb27fc5a9e60c75e4c1e97f",
+  "runtime_unchanged_since_installed_validation": true,
+  "scope": "Publication of the previously verified skill update, bilingual notes and source installation archive. This receipt and final handoff are subsequent documentation changes on main; v0.3.0 stays fixed at the release commit.",
+  "git_authentication": "Existing gh login used through a command-scoped credential helper after plain Git push lacked credentials. No global Git/auth setting or token was exposed or changed.",
+  "installed_documentation_verification": {
+    "matching_file_sha256": {
+      "HANDOFF.md": "985294fbb475081b229459c8d4eaefbf702db97a081642b2c144af8892ba494f",
+      "REQUIREMENTS.md": "d98eddb6b7cc7315ed81584d289307aeba1dd183f6e74fae4d69dd5584657d3a",
+      "CHANGELOG.md": "6629462621f7a7bea45aa4a0d700c73cd872c3b19c775300f9d33ca7b7b99ab1"
+    },
+    "runtime_files_and_manifest_unchanged": true,
+    "scope": "Publication notes, requirements authorization and current handoff only; this receipt is mirrored separately."
+  }
+}
