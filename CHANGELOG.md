@@ -2,12 +2,41 @@
 
 ## 2026-09-30
 
-GPT-6.1 Sol is now the default execution and ordinary-review route, starting at high with direct xhigh/max selection for justified difficulty. GPT-6 Sol remains an evidence-backed option. Luna high, user-selected lead configuration, independent acceptance, and risk-based Astra review remain intact.
+### v0.3.0 — GPT-6.1 Sol 与运行规则快照
 
-新增运行快照工具与完整性校验，使长任务及分支固定本轮规则；共同背景只维护一次，按版本、输入和环境判断证据是否仍有效，独立验收仍亲自执行关键检查。深度复审的明确启动与 Astra xhigh 不受通用路由覆盖。
+本次更新以 GPT-6.1 Sol high 作为默认执行与常规审查路由，允许按难点直接使用 xhigh/max，并通过精简交接和固定运行规则减少重复工作与版本混用。
 
-本次验证与未验证项见 [验证报告](tests/update-2026-09-30/VALIDATION.md)。历史结果保留原日期和模型；不宣称 max 与 Astra 全面等价或固定 Token 节省。
+## 中文更新说明
 
+- **模型选择**：6.1 Sol 从 `high` 起步，可按明确难点直接选 `xhigh` 或 `max`，不要求先逐级失败。Luna 固定 `high`，只处理边界明确、低风险、易核对的任务；旧 6 Sol 保留已有验证支持的适用路径，不作为必经中间层或静默回退。
+- **审核要求**：保留用户选择的主会话模型、按收益分工、依赖就绪、单一修改负责人和整体产物验收；必要的执行与独立验收仍分离。通用编排不会自动启动项目深度复审。
+- **减少重复工作**：共同背景与原始事实集中维护，分支引用必要材料；精简交接但保留全部发现、失败和反对证据。已有验证仅在需求、版本、输入、环境与依赖仍适用时复用，独立验收者仍亲自执行关键检查。
+- **固定运行版本**：新增 `scripts/freeze_run.py` 和随包 `runtime-manifest.json`。长任务与分支可固定一次规则快照；缺失清单、部分更新、文件漂移和常见 Skill 发现目录中的输出均拒绝。`--seal` 仅供维护者有意修改后的清单更新，正常运行不能用它掩盖不一致。
+- **问题修正**：补齐插件缓存路径检查，澄清协调职责、困难任务模型选择及审查者复用为验收者的边界；同步中英文说明，并保留历史验证原始结果。
+
+### 验证与边界
+
+本包快照测试 **10/10 通过**，两个包合计 20 项；官方 Skill 格式、配置解析和本地文档引用检查通过。两路独立评估提出的问题已修复并完成定向复查。完整源包与已安装版本均通过快照创建及自带脚本校验；本机 Codex `skills/list` 实际识别两个已启用的 Skill。
+
+上述结果是 Skill 维护验证，不是新版在真实项目上的完整多模型复审验收。未进行同任务 Token/费用/延迟对照，也未实测 6.1 Sol xhigh/max 的项目效果；不保证固定节省比例，不宣称 max 与 Astra 全面等价。模型和推理强度仍须按目标宿主的实际支持与调用证据核实。
+
+### 升级方法
+
+下载附件 `adaptive-model-orchestrator.zip` 与 `SHA256SUMS.txt`，核对校验和后，将 ZIP 内的 `adaptive-model-orchestrator` 文件夹安装到 Codex 的 skills 目录。先保存现有自定义内容，并在任务空闲或明确版本切换点更新；运行文件与 `runtime-manifest.json` 必须来自同一版本，不能只替换 `SKILL.md`。已有任务的固定快照可继续使用旧规则；安装更新不会追溯改写已载入的上下文。
+
+## English release notes
+
+GPT-6.1 Sol is the default execution and ordinary-review route at **high**, with direct **xhigh/max** selection for justified difficulty. Luna remains high for bounded, low-risk work; GPT-6 Sol remains an evidence-backed option rather than a mandatory intermediate tier or silent fallback.
+
+Adaptive Model Orchestrator retains the user-selected lead, benefit-based delegation, ready dependencies, single-editor ownership, and validation of the integrated result. Required independent acceptance remains separate from implementation; ordinary orchestration does not automatically invoke Deep Project Review.
+
+Shared source facts, focused handoffs, and version-aware evidence reuse reduce unnecessary repetition without replacing personal independent checks. The new snapshot helper checks a separately maintained runtime manifest, pins a run's instructions, rejects partial installations and common discovery-root destinations, and never automatically reseals inconsistent input.
+
+Validation includes 10 passing snapshot tests in this package, format/configuration/reference checks, independent evaluations with targeted rechecks, source and installed-package snapshot verification, and actual local Codex skill discovery. These checks do not establish end-to-end project review quality, a fixed token/latency improvement, or equivalence between Sol max and Astra.
+
+Preserve customizations before upgrading. Install the complete enclosed folder, including its runtime manifest, at an idle or explicit version boundary. Existing frozen runs may continue using their pinned version.
+
+[完整验证记录 / Validation report](https://github.com/chips-lxm/adaptive-model-orchestrator/blob/v0.3.0/tests/update-2026-09-30/VALIDATION.md) · [全部变更 / Full changes](https://github.com/chips-lxm/adaptive-model-orchestrator/compare/v0.2.0...v0.3.0)
 
 ## 2026-09-23
 
