@@ -1,5 +1,29 @@
 # Change notes / 更新说明
 
+## v0.4.0 更新说明 / Release notes (2026-11-23)
+
+### 中文
+
+- **统一为 GPT-6.2 Sol。** 常规分析、实现和独立验收默认 `high`。边界明确且易验证的任务可用 `medium`，复杂根因和跨模块分析用 `xhigh`，决定交付的疑难判断可直接使用 `max`。
+- **按上下文选择派发方式。** 主会话使用用户选择的配置。子任务确实需要历史，且父配置经证据确认匹配时，可继承完整历史。其余分支显式选择模型与档位，并交接必要原始要求、边界和验收条件。
+- **分工与验收。** 单点任务由主会话直接处理，有独立产出或验收价值时再派发。保留单一修改负责人、运行快照和整体交付验证。深度复审继续由用户单独启动。
+- **安装。** 下载 `adaptive-model-orchestrator.zip` 和 `SHA256SUMS.txt`，核对校验和后升级完整目录。保留现有自定义内容，已固定规则的任务可继续使用原快照。
+
+### English
+
+- **Unified GPT-6.2 Sol routing.** Use `high` by default for analysis, implementation, and independent acceptance. Use `medium` for bounded checks, `xhigh` for difficult root causes or cross-module work, and `max` for hard decisions that determine delivery.
+- **Context-aware delegation.** The lead keeps the user's configuration. Inherit full history when the branch needs it and the parent's confirmed configuration matches. Otherwise request model and effort explicitly and pass the essential source requirements, boundaries, and acceptance criteria.
+- **Delegation and acceptance.** Delegate where separate output or validation adds value. Keep a single editing owner, pinned runtime rules, and integrated acceptance checks. Deep Project Review retains its own explicit entry point.
+- **Installation.** Verify `adaptive-model-orchestrator.zip` against `SHA256SUMS.txt` and upgrade the complete skill folder. Preserve local customizations and let pinned runs finish with their existing snapshot.
+
+### 验证 / Verification
+
+10 项快照测试通过。用六类场景独立评估派发规则，并从本机 Codex 记录确认四个 Sol 档位实际生效。
+
+All 10 snapshot tests passed. An independent evaluation covered six dispatch scenarios. Local Codex records confirmed each of the four supported Sol efforts in use.
+
+[宿主与推理档位 / Runtime and reasoning effort](references/runtime.md) · [验证详情 / Validation details](HANDOFF.md) · [全部变更 / Full changes](https://github.com/chips-lxm/adaptive-model-orchestrator/compare/v0.3.0...v0.4.0)
+
 ## 2026-09-30
 
 ### v0.3.0 — GPT-6.1 Sol 与运行规则快照

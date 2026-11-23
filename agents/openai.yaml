@@ -1,6 +1,6 @@
 interface:
   display_name: "自适应多模型编排器"
-  short_description: "按收益组织协作，以 6.1 Sol high 起步，按难点升级并完成独立验收"
+  short_description: "按收益组织协作，按任务选择推理档位并验证整体交付"
   default_prompt: "Use $adaptive-model-orchestrator to coordinate useful parallel work across the lead and subagents, wait when dependencies require it, and validate the integrated result."
 
 policy:

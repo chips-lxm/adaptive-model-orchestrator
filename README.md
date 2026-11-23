@@ -4,22 +4,18 @@
 
 ```mermaid
 flowchart LR
-  L["Current session: user-selected lead"] --> A["gpt-6-astra: difficult reasoning"]
-  L --> S["gpt-6.1-sol: implementation and review"]
-  L --> U["gpt-6-luna · high: bounded, verifiable work"]
+  L["Current session: user-selected lead"] --> R{"Would delegation help?"}
+  R -->|Yes| S["GPT-6.2 Sol subagent with task-appropriate effort"]
+  R -->|No| E["Lead completes the work"]
 ```
 
-Adaptive Model Orchestrator is a Codex skill that routes work across gpt-6-astra, gpt-6.1-sol, and gpt-6-luna according to task complexity, parallelizability, dependencies, and verification risk. The current session first understands the request and remains on the user's selected model.
-
-It is built around one rule: **use useful parallel work to improve overall delivery, while accounting for coordination cost**.
-
-**Invest a little more judgment upfront. Aim for less rework later.**
+Adaptive Model Orchestrator is a Codex skill for organizing work across a lead and subagents. The lead keeps the user's selected model and delegates when independently scoped work can improve the result or shorten delivery. Ordinary subagents use GPT-6.2 Sol, with reasoning effort chosen for the task.
 
 For complete projects, long autonomous tasks, and deliveries that should need less supervision, the skill first decides whether delegation is worthwhile. It then assigns work according to readiness, ownership, and expected benefit, and supplies context according to each task. The goal is fewer avoidable handoffs and repeated implementations, shorter delivery cycles, and more reliable results through integrated validation.
 
 Coordination can add upfront analysis, context transfer, and verification costs. Create branches only when the expected benefit outweighs that overhead. More agents do not necessarily use fewer tokens, and a cheaper model does not necessarily consume fewer tokens. Time, cost, and quality improvements are design goals, not measured guarantees; no quantitative comparison is currently published.
 
-## Updated: useful parallel work and dependency-aware waiting
+## Parallel work and dependencies
 
 - **Keep the lead agent productive**: after delegation, the lead continues independent work with clear ownership. It can wait when no useful, safe work is ready; it does not invent work to stay busy.
 - **Dispatch ready tasks together**: independent tasks with a clear expected benefit can start concurrently within the host's available capacity. One level of branches does not mean one subagent, and there is no fixed team size.
@@ -27,26 +23,7 @@ Coordination can add upfront analysis, context transfer, and verification costs.
 - **Avoid duplicate work and conflicting edits**: the lead follows the same single-editor boundaries as subagents. Taking over requires the original editor to stop and hand off its work. A broad module name does not make disjoint work conflict.
 - **Keep review proportional**: use targeted integration checks as results arrive and validate the final whole. Add an independent reviewer only when its expected value outweighs the handoff and coordination cost.
 
-See the [2026-09-30 change notes](CHANGELOG.md#2026-09-30) and [current validation](tests/update-2026-09-30/VALIDATION.md). The [2026-09-23 report](tests/migration-2026-09-23/VALIDATION.md) remains historical evidence for the previous model map.
-
 Complete projects, long autonomous work, and requests for less supervision prompt a collaboration assessment, not automatic delegation. Focused execution gets focused context; decisions about intent, architecture, or the overall result retain original requirements and relevant history. These decisions load with the skill. No additional global `AGENTS.md` rule is needed. Automatic selection still depends on the host, description, and task context; invoke the skill explicitly when you want to ensure it is selected.
-
-## The problem it solves
-
-```text
-Without routing
-every task → strongest model or unnecessary parallel agents
-
-With adaptive routing
-simple work          → current session
-complex planning     → Astra
-coordination         → current session
-implementation       → 6.1 Sol · high; xhigh/max for justified difficulty
-bounded routine work → Luna · high
-integrated review    → 6.1 Sol; Astra when the risk warrants it
-```
-
-Hard work is not automatically parallel work. The skill creates branches only when they can progress independently and return verifiable results.
 
 ## How it routes work
 
@@ -55,16 +32,9 @@ Hard work is not automatically parallel work. The skill creates branches only wh
 | A clear path with no worthwhile independent subtask | Complete it in the current session |
 | Multiple tightly coupled steps | Keep one coordinator; delegate only independent research or checks |
 | Multiple independently verifiable deliverables | Dispatch ready, non-conflicting tasks concurrently when worthwhile; the lead advances its own work |
-| One difficult, indivisible reasoning problem | Select 6.1 Sol xhigh/max or Astra for the core difficulty, with independent review when justified |
+| One difficult, indivisible reasoning problem | Assign it to one owner and add independent review when justified |
 
-Default roles:
-
-- **gpt-6-astra** — difficult reasoning, architecture, conflicting constraints, and high-risk final validation; its role is unchanged.
-- **gpt-6.1-sol** — analysis, communication, implementation, tool use, code, files, complex layouts, integration, and cross-module review. Start at `high`; select `xhigh` or `max` directly for justified difficulty. Do not automatically lower the effort.
-- **gpt-6-sol** — retained for previously verified task paths or evidence-backed advantages on matched tasks; `medium/high`, with `xhigh` when needed. It is not a mandatory intermediate tier or a silent fallback.
-- **gpt-6-luna** — bounded, low-risk tasks with clear checks; always use `high` reasoning.
-
-These are routing defaults, not a requirement to use every model or create a separate agent for each role. Model consolidation does not merge independent reviewer and fixer roles. The lead can combine execution and coordination when independence is not required. The active environment and user authorization always determine what can actually run.
+See [host configuration and reasoning effort](references/runtime.md) for the exact model, the effort table, and when to inherit conversation history. When independent acceptance is needed, the reviewer must not have made the changes they verify. An explicit request to run Deep Project Review follows that skill's own workflow.
 
 ## Routing example
 
@@ -76,13 +46,10 @@ Build and review a full-stack authentication system.
 
 Possible orchestration:
 
-1. The lead establishes stable interfaces and acceptance criteria, drawing on **Astra · high** for difficult architecture or security decisions when needed.
-2. Once those inputs are ready, disjoint backend and frontend work can run concurrently with **gpt-6.1-sol · high/xhigh/max**. Select `xhigh` or `max` directly for a clearly difficult implementation. The lead advances independent deployment configuration or integration preparation within its own editing scope.
-3. Bounded, low-risk documentation or routine checks can go to **gpt-6-luna · high** when their inputs are ready and delegation is worthwhile; spare capacity alone is not a reason to create a branch.
-4. As stable results arrive, the lead checks each handoff and starts the work it unblocks. It waits when all remaining useful work is genuinely blocked, without duplicating an active implementation.
-5. The integrated system receives final validation. **6.1 Sol** and **Astra** are the preferred routes for ordinary and high-risk reviews; the lead may combine roles, and a separate reviewer is added only when the expected value justifies it.
-
-If the core problem is indivisible and a subagent is better placed to solve it, the lead may delegate that work and wait. The skill does not manufacture parallelism.
+1. The lead defines stable interfaces and acceptance criteria.
+2. Once those inputs are ready, subagents can implement the frontend and backend concurrently within separate editing boundaries. The lead can prepare integration.
+3. If a defect spans both modules, give one owner the relevant evidence and select the effort for the specific difficulty.
+4. Check each stable handoff and start the work it unblocks. Validate the integrated system against the original criteria. If an independent reviewer is warranted, give them access to the original requirements and the evidence needed to rerun the key checks.
 
 ## Install
 
@@ -104,7 +71,7 @@ For an existing Git-based installation, preserve any local customizations, then 
 git -C ~/.codex/skills/adaptive-model-orchestrator pull --ff-only
 ```
 
-For a manually copied installation, back up customizations and replace the runtime files, including `SKILL.md`, `agents/`, `references/`, and `scripts/`, together from the same revision.
+For a manually copied installation, back up customizations and replace all runtime files and `runtime-manifest.json` together from the same release.
 
 ## What is included
 
@@ -113,11 +80,14 @@ adaptive-model-orchestrator/
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── scripts/freeze_run.py
-└── references/collaboration-and-validation.md
+└── references/
+    ├── collaboration-and-validation.md
+    └── runtime.md
 ```
 
-- `SKILL.md` contains routing decisions, model roles, constraints, and completion criteria.
+- `SKILL.md` contains delegation decisions, constraints, and completion criteria.
 - `references/collaboration-and-validation.md` contains handoff fields, state tracking, escalation, and review rules.
+- `references/runtime.md` defines the ordinary branch configuration, dispatch options, and evidence for effective settings.
 - `agents/openai.yaml` provides Codex-facing display metadata and a default prompt.
 
 ## Design principles
@@ -132,14 +102,12 @@ adaptive-model-orchestrator/
 
 ## Version consistency and validation
 
-The 2026-09-30 route starts GPT-6.1 Sol at `high` and permits direct `xhigh` or `max` selection. GPT-6 Sol remains available for verified task paths. Luna stays at `high`; Deep Project Review always retains a separate Astra `xhigh` adjudicator. These are routing policies, not measured quality or token-savings guarantees.
-
 For long or multi-agent runs, use `python3 scripts/freeze_run.py --output /absolute/run-evidence/skill-snapshot` outside skill discovery directories. Every child and continuation reads that frozen entrypoint and its relative resources. Verify it with `python3 scripts/freeze_run.py --verify /absolute/run-evidence/skill-snapshot`. The snapshot contains runtime resources, not Git or historical tests. A recorded version number alone does not pin files. Finish active runs or arrange a version boundary before replacing an installation.
 
 
 Snapshot creation checks the bundled `runtime-manifest.json` and rejects partial installations; distribute it with all runtime resources. After intentional edits, maintainers rebuild it with `python3 -B scripts/freeze_run.py --seal`. Normal runs must not reseal to bypass integrity failures.
 
-See [current validation](tests/update-2026-09-30/VALIDATION.md). Maintainers start with [AGENTS.md](AGENTS.md), [confirmed requirements](REQUIREMENTS.md), and [handoff](HANDOFF.md).
+See the [change notes](CHANGELOG.md) for release history. Maintainers start with [AGENTS.md](AGENTS.md), [confirmed requirements](REQUIREMENTS.md), and [handoff](HANDOFF.md).
 
 ## License
 
